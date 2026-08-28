@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7fbff">
+<meta name="description" content="Academic AI Toolkit — four practical web tools supporting academic research and publishing from prompt development to journal selection.">
+<title>Academic AI Toolkit</title>
+<style>
+:root{
+  --bg:#f7fbff;--bg2:#eef6ff;--surface:#ffffff;--text:#0b1730;--muted:#5b6b82;
+  --blue:#155eef;--blue2:#0b3fa7;--teal:#067a78;--line:#d9e4f2;--soft:#edf4ff;
+  --shadow:0 24px 70px rgba(29,55,91,.10)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 8% 4%,rgba(21,94,239,.09),transparent 26%),radial-gradient(circle at 92% 10%,rgba(6,122,120,.10),transparent 27%),linear-gradient(180deg,var(--bg),#fff 55%,var(--bg2))}a{color:inherit}.wrap{width:min(1180px,calc(100% - 36px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:18px}.brand{font-weight:950;letter-spacing:-.03em}.brand span{color:var(--blue)}.navlinks{display:flex;gap:22px;align-items:center;font-size:14px;font-weight:800;color:#3f5068}.navlinks a{text-decoration:none}.navcta{padding:11px 16px;border:1px solid #aec5ec;border-radius:12px;background:#fff;color:var(--blue2)!important}.hero{padding:72px 0 62px;display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid #c7d8f4;border-radius:999px;background:rgba(255,255,255,.74);color:var(--blue2);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.055em}.dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}h1{font-size:clamp(46px,7vw,78px);line-height:.98;letter-spacing:-.065em;margin:20px 0 22px;max-width:800px}.grad{background:linear-gradient(100deg,var(--blue2),var(--blue),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:20px;line-height:1.65;color:#42536b;max-width:760px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:14px 19px;border-radius:13px;font-weight:900;border:1px solid transparent;transition:.15s ease}.btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(135deg,#0d3176,var(--blue));color:#fff;box-shadow:0 12px 28px rgba(21,94,239,.22)}.secondary{background:#fff;border-color:#c8d7ea;color:#18304f}.hero-card{background:linear-gradient(180deg,#fff,#f6faff);border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:var(--shadow)}.hero-card h3{margin:0 0 8px;font-size:17px}.flow{display:grid;gap:10px;margin-top:20px}.flowitem{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:center;padding:12px;border-radius:15px;background:#fff;border:1px solid #e1eaf5}.num{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--soft);color:var(--blue2);font-weight:950}.flowitem b{display:block}.flowitem small{display:block;color:var(--muted);margin-top:2px}.section{padding:76px 0}.section-head{max-width:760px;margin-bottom:34px}.kicker{color:var(--teal);font-weight:950;font-size:13px;text-transform:uppercase;letter-spacing:.06em}.section h2{font-size:clamp(32px,4.5vw,48px);letter-spacing:-.045em;margin:9px 0 12px}.section-head p{color:var(--muted);line-height:1.65;font-size:17px}.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.tool{background:var(--surface);border:1px solid var(--line);border-radius:23px;padding:24px;box-shadow:0 12px 35px rgba(24,52,88,.07);position:relative;overflow:hidden}.tool:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--blue),var(--teal))}.tooltop{display:flex;gap:14px;align-items:flex-start}.icon{width:48px;height:48px;flex:0 0 48px;border-radius:15px;background:linear-gradient(145deg,#e8f1ff,#effbf9);display:grid;place-items:center;font-size:23px}.tool h3{margin:2px 0 7px;font-size:22px;letter-spacing:-.025em}.tool p{margin:0;color:var(--muted);line-height:1.58}.toolmeta{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:22px;padding-top:18px;border-top:1px solid #e7eef7}.toolmeta span{font-size:12px;font-weight:850;color:#59708f}.launch{text-decoration:none;color:var(--blue2);font-weight:950;font-size:14px}.audience{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.aud{padding:24px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.82)}.aud h3{margin:0 0 8px}.aud p{margin:0;color:var(--muted);line-height:1.55}.pilot{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;padding:34px;border-radius:28px;background:linear-gradient(135deg,#0b214d,#124a92 58%,#067a78);color:#fff;box-shadow:0 20px 55px rgba(14,55,110,.22)}.pilot h2{margin-top:0;color:#fff}.pilot p{color:#dbe9ff;line-height:1.65}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.step{padding:15px;border-radius:16px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18)}.step b{display:block;font-size:13px}.step span{font-size:12px;color:#dbe9ff;line-height:1.45;display:block;margin-top:5px}.pilot .secondary{align-self:center;justify-self:end;background:#fff;border:0;color:#0b2c62;padding:15px 20px}.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}.profilebox{padding:26px;border-radius:22px;border:1px solid var(--line);background:#fff}.monogram{width:74px;height:74px;border-radius:22px;background:linear-gradient(135deg,#dce9ff,#daf4ef);display:grid;place-items:center;font-size:25px;font-weight:950;color:var(--blue2);margin-bottom:16px}.profilebox h3{margin:0 0 6px}.profilebox p{color:var(--muted);line-height:1.55}.abouttext{font-size:17px;color:#42536b;line-height:1.75}.notice{margin-top:20px;padding:15px 17px;border:1px solid #d7e5f3;border-radius:15px;background:#f9fcff;color:#55677f;font-size:13px;line-height:1.55}.footer{padding:34px 0 46px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:18px;color:#6c7c91;font-size:13px}.footer a{color:var(--blue2);font-weight:850;text-decoration:none}@media(max-width:900px){.hero,.pilot,.about{grid-template-columns:1fr}.hero{padding-top:40px}.pilot .secondary{justify-self:start}.audience{grid-template-columns:1fr}.tools{grid-template-columns:1fr}.navlinks a:not(.navcta){display:none}}@media(max-width:620px){.wrap{width:min(100% - 24px,1180px)}.hero{padding:35px 0 46px}.lead{font-size:17px}.section{padding:54px 0}.steps{grid-template-columns:1fr}.footer{flex-direction:column}.toolmeta{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <div class="brand">Academic <span>AI Toolkit</span></div>
+    <div class="navlinks">
+      <a href="#tools">Tools</a><a href="#institutions">Institutions</a><a href="#about">About</a>
+      <a class="navcta" href="https://github.com/tdirsehan" target="_blank" rel="noopener">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Academic research & publishing</div>
+      <h1>From research prompt to <span class="grad">journal selection.</span></h1>
+      <p class="lead">Academic AI Toolkit brings four practical web applications into one coherent workflow for researchers, authors, reviewers, doctoral students, libraries, and graduate schools.</p>
+      <div class="actions">
+        <a class="btn primary" href="#tools">Explore the 4 tools</a>
+        <a class="btn secondary" href="#institutions">Institutional pilot</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h3>Integrated academic workflow</h3>
+      <div class="flow">
+        <div class="flowitem"><div class="num">1</div><div><b>Develop the prompt</b><small>Turn a research need into a structured AI instruction.</small></div></div>
+        <div class="flowitem"><div class="num">2</div><div><b>Structure reviewer responses</b><small>Break complex comments into actionable response items.</small></div></div>
+        <div class="flowitem"><div class="num">3</div><div><b>Generate keywords</b><small>Convert the abstract into publication-oriented keywords.</small></div></div>
+        <div class="flowitem"><div class="num">4</div><div><b>Target journals</b><small>Use publication evidence to identify relevant journal matches.</small></div></div>
+      </div>
+    </aside>
+  </header>
+</div>
+
+<main>
+  <section class="section" id="tools"><div class="wrap">
+    <div class="section-head"><div class="kicker">The toolkit</div><h2>Four focused tools. One academic workflow.</h2><p>Each application solves a distinct task and can also be used independently. The current versions are available as live demos.</p></div>
+    <div class="tools">
+      <article class="tool"><div class="tooltop"><div class="icon">⌘</div><div><h3>Akademik Komut Geliştirici</h3><p>Builds structured academic AI prompts for literature review, research design, idea development, academic writing, reviewing, and scholarly workflows.</p></div></div><div class="toolmeta"><span>Research prompt development</span><a class="launch" href="https://tdirsehan.github.io/akademik-komut-gelistirici/" target="_blank" rel="noopener">Open live demo ↗</a></div></article>
+      <article class="tool"><div class="tooltop"><div class="icon">↳</div><div><h3>Review Splitter</h3><p>Splits reviewer comments into structured items such as R1.1 and R1.2 and supports clear point-by-point manuscript response preparation.</p></div></div><div class="toolmeta"><span>Peer-review response workflow</span><a class="launch" href="https://tdirsehan.github.io/review-splitter/" target="_blank" rel="noopener">Open live demo ↗</a></div></article>
+      <article class="tool"><div class="tooltop"><div class="icon">#</div><div><h3>Abstract2Keywords</h3><p>Generates publication-oriented keywords from abstracts and supports structured and unstructured abstract workflows with section-level guidance.</p></div></div><div class="toolmeta"><span>Abstract & keyword support</span><a class="launch" href="https://tdirsehan.github.io/abstract2keywords/" target="_blank" rel="noopener">Open live demo ↗</a></div></article>
+      <article class="tool"><div class="tooltop"><div class="icon">◎</div><div><h3>Abstract2Journal</h3><p>Recommends relevant journals from an abstract and keywords using publication evidence, topic overlap, Journal Fit, and similar published articles.</p></div></div><div class="toolmeta"><span>Evidence-based journal targeting</span><a class="launch" href="https://tdirsehan.github.io/abstract2journal/" target="_blank" rel="noopener">Open live demo ↗</a></div></article>
+    </div>
+  </div></section>
+
+  <section class="section" id="institutions"><div class="wrap">
+    <div class="section-head"><div class="kicker">Institutional use</div><h2>Designed for researchers — and the institutions that support them.</h2><p>The toolkit can be evaluated as a pilot for academic communities before any larger licensing or integration decision.</p></div>
+    <div class="audience">
+      <div class="aud"><h3>University Libraries</h3><p>A practical digital research-support toolkit that can complement scholarly discovery, writing, and publishing services.</p></div>
+      <div class="aud"><h3>Graduate & Doctoral Schools</h3><p>Supports doctoral researchers with repeatable workflows across research planning, revision, keywording, and journal targeting.</p></div>
+      <div class="aud"><h3>Research Groups & Training Centres</h3><p>Can be incorporated into academic writing, AI literacy, research methods, and publication-support programmes.</p></div>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="wrap">
+    <div class="pilot">
+      <div><div class="kicker" style="color:#8fe7df">Pilot programme</div><h2>Start small. Evaluate real use.</h2><p>A sensible institutional path is to begin with a limited pilot, gather researcher feedback, then decide whether broader access or a tailored institutional version is useful.</p><div class="steps"><div class="step"><b>01 · Demo</b><span>Review the four live tools and intended workflows.</span></div><div class="step"><b>02 · Pilot</b><span>Define a limited user group and evaluation period.</span></div><div class="step"><b>03 · Institutional plan</b><span>Discuss access, support, customization, and licensing needs.</span></div></div></div>
+      <a class="btn secondary" href="https://github.com/tdirsehan" target="_blank" rel="noopener">Request a pilot ↗</a>
+    </div>
+  </div></section>
+
+  <section class="section" id="about"><div class="wrap about">
+    <div class="profilebox"><div class="monogram">TD</div><h3>Prof. Dr. Taşkın Dirsehan</h3><p>Professor of Marketing<br>Academic AI tool developer</p><a class="launch" href="https://github.com/tdirsehan" target="_blank" rel="noopener">GitHub profile ↗</a></div>
+    <div><div class="kicker">About the project</div><h2>Built from real academic workflows.</h2><div class="abouttext">Academic AI Toolkit is a portfolio of lightweight research and publishing tools developed to make common academic tasks more structured, transparent, and reusable. The objective is not to replace researcher judgment, peer review, or publisher guidance, but to support better preparation and decision-making.</div><div class="notice">The current applications are demonstration-stage web tools. Researchers should verify references, journal policies, submission requirements, and AI-generated outputs before academic or publication use.</div></div>
+  </div></section>
+</main>
+
+<div class="wrap"><footer class="footer"><span>Academic AI Toolkit · Developed by Prof. Dr. Taşkın Dirsehan</span><span><a href="https://github.com/tdirsehan/academic-ai-toolkit" target="_blank" rel="noopener">View repository ↗</a></span></footer></div>
+</body>
+</html>
