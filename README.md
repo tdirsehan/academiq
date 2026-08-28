@@ -1,45 +1,48 @@
 # Academic AI Toolkit
 
-Academic AI Toolkit is a portfolio of four lightweight web applications developed by Prof. Dr. Taşkın Dirsehan to support academic research and publishing workflows.
+Academic AI Toolkit is a portfolio of four lightweight academic web applications developed by Prof. Dr. Taşkın Dirsehan to support research and publishing workflows from prompt development to journal targeting.
 
 ## Live website
 
 https://tdirsehan.github.io/academic-ai-toolkit/
 
-## Included tools
+## Public demo tools
 
-1. Akademik Komut Geliştirici
-   - Structured academic prompt development
-   - Live app: https://tdirsehan.github.io/akademik-komut-gelistirici/
+1. Akademik Komut Geliştirici  
+https://tdirsehan.github.io/akademik-komut-gelistirici/
 
-2. Review Splitter
-   - Reviewer-comment splitting and point-by-point response support
-   - Live app: https://tdirsehan.github.io/review-splitter/
+2. Review Splitter  
+https://tdirsehan.github.io/review-splitter/
 
-3. Abstract2Keywords
-   - Abstract-based keyword generation and structured abstract support
-   - Live app: https://tdirsehan.github.io/abstract2keywords/
+3. Abstract2Keywords  
+https://tdirsehan.github.io/abstract2keywords/
 
-4. Abstract2Journal
-   - Evidence-based journal recommendations using abstract, keywords, topic overlap, and similar published articles
-   - Live app: https://tdirsehan.github.io/abstract2journal/
+4. Abstract2Journal  
+https://tdirsehan.github.io/abstract2journal/
 
-## Integrated workflow
+## Commercial direction
 
-Prompt development → Reviewer response structuring → Keyword generation → Journal selection
+The current public applications are evaluation versions. The project is positioned around an institution-first pathway:
 
-## Institutional use
+Public Demo → 30-Day Institutional Pilot → Tailored Institutional Licence
 
-The toolkit is designed for potential use by:
+The institutional value proposition is not simply access to four public links. A pilot or paid engagement can be scoped around onboarding, academic training, evaluation support, tailored configuration, access requirements, and future institutional functionality.
+
+The site deliberately does not claim that authentication, analytics, payment infrastructure, or institutional access control already exists. Those capabilities should only be offered when they have been separately developed and agreed.
+
+## Intended institutional audiences
 
 - University libraries
 - Graduate and doctoral schools
 - Research groups
-- Academic writing and research-methods programmes
-- Continuing education and researcher-development units
+- Academic writing and research-support units
+- Continuing education and professional development centres
 
-The current website presents the tools as live demonstrations and introduces a possible institutional pilot pathway.
+## Responsible use
 
-## Notes
+The toolkit supports academic work but does not replace scholarly judgement, peer review, editorial decisions, source verification, or institutional research governance. Abstract2Journal fit scores are not acceptance probabilities.
 
-The applications are research and publishing support tools. Users should independently verify references, journal policies, submission requirements, and AI-assisted outputs before final academic use.
+## Legal / information pages
+
+- Privacy: https://tdirsehan.github.io/academic-ai-toolkit/privacy.html
+- Terms: https://tdirsehan.github.io/academic-ai-toolkit/terms.html
