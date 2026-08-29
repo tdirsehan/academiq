@@ -3,247 +3,276 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#081b3a">
-<meta name="description" content="Academic AI Toolkit brings six practical academic web tools into one demo-ready workflow from research prompt development to journal submission and reviewer response.">
-<title>Academic AI Toolkit | Six Demo-Ready Academic Tools</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Academic AI Toolkit: six practical browser-based tools for research, publishing, submission, and reviewer-response workflows.">
+<title>Academic AI Toolkit</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="nav-shell">
-  <div class="wrap nav">
-    <a class="brand" href="#top">Academic <span>AI Toolkit</span></a>
-    <div class="navlinks">
-      <a href="#modules">Modules</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Academic AI Toolkit home">
+      <span class="brand-mark">AI</span>
+      <span>Academic AI Toolkit</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#tools">Tools</a>
       <a href="#workflow">Workflow</a>
-      <a href="#pilot">Pilot</a>
-      <a href="#plans">Institutional Path</a>
-      <a href="#responsible">Responsible Use</a>
-      <a class="navcta" href="#inquiry">Request a Pilot</a>
-    </div>
-  </div>
-</div>
-
-<header class="hero" id="top">
-  <div class="wrap">
-    <div class="hero-panel">
-      <div class="hero-copy">
-        <div class="eyebrow"><i></i> Academic research & publishing workflow</div>
-        <h1>From research idea to <span class="hero-grad">submission — and revision.</span></h1>
-        <p class="lead">Academic AI Toolkit brings six focused web applications into one coherent academic workflow for researchers, doctoral students, libraries, graduate schools, research offices, and academic support units.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#modules">Try the live demos</a>
-          <a class="btn btn-secondary" href="#pilot">Explore the 30-day pilot</a>
-        </div>
-        <div class="trustline">
-          <span class="trustpill">6 focused modules</span>
-          <span class="trustpill">Browser-based</span>
-          <span class="trustpill">Live public demos</span>
-          <span class="trustpill">No installation for evaluation</span>
-          <span class="trustpill">Institution-first licensing path</span>
-        </div>
-      </div>
-
-      <aside class="journey-card">
-        <h3>One academic journey</h3>
-        <p>Each module addresses a specific point in the research and publishing process.</p>
-        <div class="journey">
-          <div class="journey-item"><div class="journey-num">1</div><div><b>Develop the research prompt</b><small>Turn a research need into a structured AI instruction.</small></div></div>
-          <div class="journey-item"><div class="journey-num">2</div><div><b>Shape the abstract metadata</b><small>Extract publication-oriented keywords and title options.</small></div></div>
-          <div class="journey-item"><div class="journey-num">3</div><div><b>Target the journal</b><small>Use publication evidence to identify relevant journal matches.</small></div></div>
-          <div class="journey-item"><div class="journey-num">4</div><div><b>Prepare the submission</b><small>Draft a journal-facing cover letter with fit and claim checks.</small></div></div>
-          <div class="journey-item"><div class="journey-num">5</div><div><b>Respond to peer review</b><small>Structure reviewer comments into point-by-point revision items.</small></div></div>
-        </div>
-      </aside>
-    </div>
+      <a href="#pilot">For Institutions</a>
+      <a class="nav-button" href="#contact">Request a Pilot</a>
+    </nav>
   </div>
 </header>
 
-<main>
-<section class="section" id="modules">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">Live public demos</div>
-      <h2>Six modules. Ready to test now.</h2>
-      <p>Each module can be opened inside this site for a quick evaluation or launched full-screen in its own GitHub Pages application. The public versions are evaluation tools that demonstrate current functionality before any institutional pilot or tailored licence is discussed.</p>
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">Academic research & publishing</div>
+      <h1>Six practical tools for the academic publishing journey.</h1>
+      <p class="hero-text">From prompt development and metadata to journal targeting, cover letters, and reviewer responses — all in one simple toolkit.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#tools">Try the demos</a>
+        <a class="button button-secondary" href="#pilot">Explore institutional pilot</a>
+      </div>
+      <div class="hero-meta">
+        <span>6 focused modules</span>
+        <span>Browser-based</span>
+        <span>Live demos</span>
+      </div>
     </div>
 
-    <div class="module-grid">
-      <article class="module">
-        <div class="module-top"><div class="module-icon">⌘</div><div><span class="stage">Research design</span><h3>Academic Prompt Generator</h3></div></div>
-        <p>Builds structured academic and professional AI prompts using purpose, role, task, context, evidence rules, constraints, output format, and quality-control fields.</p>
-        <ul class="feature-list"><li>Academic research and literature-review templates</li><li>Prompt Quality Score</li><li>Anti-hallucination and reliability safeguards</li><li>Open in ChatGPT, Gemini, Claude, or Grok</li></ul>
-        <div class="module-actions"><button class="btn preview" data-demo-name="Academic Prompt Generator" data-demo-url="https://tdirsehan.github.io/academic-prompt-generator/">Try inside site</button><a class="btn open" href="https://tdirsehan.github.io/academic-prompt-generator/" target="_blank" rel="noopener">Open full demo ↗</a></div>
+    <div class="hero-card" aria-label="Toolkit workflow summary">
+      <div class="hero-card-top">
+        <span class="status-dot"></span>
+        <span>Academic workflow</span>
+      </div>
+      <div class="mini-flow">
+        <div class="mini-step"><span>01</span><div><strong>Prompt</strong><small>Define the task clearly</small></div></div>
+        <div class="mini-step"><span>02</span><div><strong>Keywords & Title</strong><small>Shape publication metadata</small></div></div>
+        <div class="mini-step"><span>03</span><div><strong>Journal</strong><small>Identify relevant targets</small></div></div>
+        <div class="mini-step"><span>04</span><div><strong>Cover Letter</strong><small>Prepare the submission</small></div></div>
+        <div class="mini-step"><span>05</span><div><strong>Review Response</strong><small>Structure revisions</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tools">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-kicker">Live demos</span>
+      <h2>Choose the tool you need.</h2>
+      <p>Each module is focused on one academic task. Try it here or open the full version in a new tab.</p>
+    </div>
+
+    <div class="tool-grid">
+      <article class="tool-card">
+        <div class="tool-head"><div class="tool-icon">⌘</div><span class="tool-stage">Research</span></div>
+        <h3>Academic Prompt Generator</h3>
+        <p>Build structured academic AI prompts with evidence rules, constraints, output format, and quality controls.</p>
+        <div class="tool-tags"><span>Prompt quality</span><span>Research templates</span></div>
+        <div class="tool-actions">
+          <button class="tool-primary" data-demo-name="Academic Prompt Generator" data-demo-url="https://tdirsehan.github.io/academic-prompt-generator/">Try demo</button>
+          <a href="https://tdirsehan.github.io/academic-prompt-generator/" target="_blank" rel="noopener">Open full ↗</a>
+        </div>
       </article>
 
-      <article class="module">
-        <div class="module-top"><div class="module-icon">#</div><div><span class="stage">Metadata</span><h3>Abstract2Keywords</h3></div></div>
-        <p>Transforms an abstract into publication-oriented keywords and can also restructure unstructured abstracts into standard academic sections.</p>
-        <ul class="feature-list"><li>Structured and unstructured abstract support</li><li>1–10 keyword generation</li><li>Section-level word counts</li><li>One-click keyword copying</li></ul>
-        <div class="module-actions"><button class="btn preview" data-demo-name="Abstract2Keywords" data-demo-url="https://tdirsehan.github.io/abstract2keywords/">Try inside site</button><a class="btn open" href="https://tdirsehan.github.io/abstract2keywords/" target="_blank" rel="noopener">Open full demo ↗</a></div>
+      <article class="tool-card">
+        <div class="tool-head"><div class="tool-icon">#</div><span class="tool-stage">Metadata</span></div>
+        <h3>Abstract2Keywords</h3>
+        <p>Generate publication-oriented keywords and structure unstructured abstracts into standard academic sections.</p>
+        <div class="tool-tags"><span>1–10 keywords</span><span>Abstract structure</span></div>
+        <div class="tool-actions">
+          <button class="tool-primary" data-demo-name="Abstract2Keywords" data-demo-url="https://tdirsehan.github.io/abstract2keywords/">Try demo</button>
+          <a href="https://tdirsehan.github.io/abstract2keywords/" target="_blank" rel="noopener">Open full ↗</a>
+        </div>
       </article>
 
-      <article class="module">
-        <div class="module-top"><div class="module-icon">T</div><div><span class="stage">Positioning</span><h3>Abstract2Title</h3></div></div>
-        <p>Generates exactly three publication-ready title alternatives and evaluates them for abstract alignment, clarity, specificity, tone, searchability, and concision.</p>
-        <ul class="feature-list"><li>Three academic title strategies</li><li>Title Fit Score /100</li><li>Strengths and improvement points</li><li>Recommended title identification</li></ul>
-        <div class="module-actions"><button class="btn preview" data-demo-name="Abstract2Title" data-demo-url="https://tdirsehan.github.io/abstract2title/">Try inside site</button><a class="btn open" href="https://tdirsehan.github.io/abstract2title/" target="_blank" rel="noopener">Open full demo ↗</a></div>
+      <article class="tool-card">
+        <div class="tool-head"><div class="tool-icon">T</div><span class="tool-stage">Positioning</span></div>
+        <h3>Abstract2Title</h3>
+        <p>Generate and compare three publication-ready title alternatives with a structured Title Fit evaluation.</p>
+        <div class="tool-tags"><span>3 title strategies</span><span>Fit score</span></div>
+        <div class="tool-actions">
+          <button class="tool-primary" data-demo-name="Abstract2Title" data-demo-url="https://tdirsehan.github.io/abstract2title/">Try demo</button>
+          <a href="https://tdirsehan.github.io/abstract2title/" target="_blank" rel="noopener">Open full ↗</a>
+        </div>
       </article>
 
-      <article class="module">
-        <div class="module-top"><div class="module-icon">◎</div><div><span class="stage">Journal targeting</span><h3>Abstract2Journal</h3></div></div>
-        <p>Matches abstracts and keywords with journals using OpenAlex search, publication evidence, topic overlap, recency, and similar published articles.</p>
-        <ul class="feature-list"><li>Up to 10 journal recommendations</li><li>Journal Fit score</li><li>Overlapping Aspects</li><li>Real similar article and verified link</li></ul>
-        <div class="module-actions"><button class="btn preview" data-demo-name="Abstract2Journal" data-demo-url="https://tdirsehan.github.io/abstract2journal/">Try inside site</button><a class="btn open" href="https://tdirsehan.github.io/abstract2journal/" target="_blank" rel="noopener">Open full demo ↗</a></div>
+      <article class="tool-card">
+        <div class="tool-head"><div class="tool-icon">◎</div><span class="tool-stage">Targeting</span></div>
+        <h3>Abstract2Journal</h3>
+        <p>Match abstracts with journals using publication evidence, topic overlap, similar articles, and OpenAlex data.</p>
+        <div class="tool-tags"><span>Journal Fit</span><span>Real articles</span></div>
+        <div class="tool-actions">
+          <button class="tool-primary" data-demo-name="Abstract2Journal" data-demo-url="https://tdirsehan.github.io/abstract2journal/">Try demo</button>
+          <a href="https://tdirsehan.github.io/abstract2journal/" target="_blank" rel="noopener">Open full ↗</a>
+        </div>
       </article>
 
-      <article class="module">
-        <div class="module-top"><div class="module-icon">✉</div><div><span class="stage">Submission</span><h3>Abstract2CoverLetter</h3></div></div>
-        <p>Creates a professional editor-facing cover-letter draft from manuscript information, target-journal details, aims and scope, authorship, and optional submission statements.</p>
-        <ul class="feature-list"><li>Aims & Scope Fit /100</li><li>Cover Letter Quality Score</li><li>Optional ethics, funding, data, and conflict statements</li><li>Risky-claim and verification warnings</li></ul>
-        <div class="module-actions"><button class="btn preview" data-demo-name="Abstract2CoverLetter" data-demo-url="https://tdirsehan.github.io/abstract2coverletter/">Try inside site</button><a class="btn open" href="https://tdirsehan.github.io/abstract2coverletter/" target="_blank" rel="noopener">Open full demo ↗</a></div>
+      <article class="tool-card">
+        <div class="tool-head"><div class="tool-icon">✉</div><span class="tool-stage">Submission</span></div>
+        <h3>Abstract2CoverLetter</h3>
+        <p>Draft a journal-ready cover letter with aims-and-scope fit, quality checks, and optional submission statements.</p>
+        <div class="tool-tags"><span>Scope fit</span><span>Claim checks</span></div>
+        <div class="tool-actions">
+          <button class="tool-primary" data-demo-name="Abstract2CoverLetter" data-demo-url="https://tdirsehan.github.io/abstract2coverletter/">Try demo</button>
+          <a href="https://tdirsehan.github.io/abstract2coverletter/" target="_blank" rel="noopener">Open full ↗</a>
+        </div>
       </article>
 
-      <article class="module">
-        <div class="module-top"><div class="module-icon">↳</div><div><span class="stage">Peer review</span><h3>Review Splitter</h3></div></div>
-        <p>Identifies reviewer sections, separates independent revision requests, and converts them into structured items such as R1.1, R1.2, and R2.1 with editable response starters.</p>
-        <ul class="feature-list"><li>Reviewer 1 / Reviewer 2 detection</li><li>Point-by-point response structure</li><li>Balanced, warm, and concise response tones</li><li>Editor letter, copy, and TXT export</li></ul>
-        <div class="module-actions"><button class="btn preview" data-demo-name="Review Splitter" data-demo-url="https://tdirsehan.github.io/review-splitter/">Try inside site</button><a class="btn open" href="https://tdirsehan.github.io/review-splitter/" target="_blank" rel="noopener">Open full demo ↗</a></div>
+      <article class="tool-card">
+        <div class="tool-head"><div class="tool-icon">↳</div><span class="tool-stage">Peer review</span></div>
+        <h3>Review Splitter</h3>
+        <p>Turn reviewer comments into structured R1.1, R1.2, and R2.1 items with editable point-by-point response starters.</p>
+        <div class="tool-tags"><span>Comment splitting</span><span>Response drafting</span></div>
+        <div class="tool-actions">
+          <button class="tool-primary" data-demo-name="Review Splitter" data-demo-url="https://tdirsehan.github.io/review-splitter/">Try demo</button>
+          <a href="https://tdirsehan.github.io/review-splitter/" target="_blank" rel="noopener">Open full ↗</a>
+        </div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section soft-section" id="workflow">
-  <div class="wrap">
-    <div class="section-head"><div class="kicker">Integrated workflow</div><h2>Use only the module you need — or follow the full journey.</h2><p>The toolkit is modular. Institutions can demonstrate individual applications or present them as one connected support pathway across research design, publication preparation, journal selection, submission, and revision.</p></div>
-    <div class="workflow">
-      <div class="flow-step"><div class="flow-node">⌘</div><h3>Prompt</h3><p>Define the academic task and evidence rules.</p></div>
-      <div class="flow-step"><div class="flow-node">#</div><h3>Keywords</h3><p>Extract publication-oriented metadata.</p></div>
-      <div class="flow-step"><div class="flow-node">T</div><h3>Title</h3><p>Generate and evaluate title alternatives.</p></div>
-      <div class="flow-step"><div class="flow-node">◎</div><h3>Journal</h3><p>Identify evidence-based journal matches.</p></div>
-      <div class="flow-step"><div class="flow-node">✉</div><h3>Cover Letter</h3><p>Prepare a journal-facing submission draft.</p></div>
-      <div class="flow-step"><div class="flow-node">↳</div><h3>Revision</h3><p>Structure reviewer responses point by point.</p></div>
+<section class="section section-soft" id="workflow">
+  <div class="container">
+    <div class="section-heading compact">
+      <span class="section-kicker">One connected workflow</span>
+      <h2>Use one module or follow the full journey.</h2>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><div class="kicker">Institutional value</div><h2>The value is more than six public links.</h2><p>A pilot or paid engagement can be scoped around onboarding, academic training, evaluation support, tailored configuration, and an agreed institutional use case without claiming infrastructure that has not yet been built.</p></div>
-    <div class="value-grid">
-      <div class="value-card"><div class="value-icon">🎓</div><h3>Academic onboarding</h3><p>Introduce researchers, doctoral students, or support staff to a structured six-module workflow rather than isolated AI tools.</p></div>
-      <div class="value-card"><div class="value-icon">🧭</div><h3>Use-case mapping</h3><p>Map modules to the institution’s publication support, doctoral education, research methods, or library training needs.</p></div>
-      <div class="value-card"><div class="value-icon">🧪</div><h3>Evidence before licence</h3><p>Use a limited 30-day pilot to gather structured feedback and evaluate fit before discussing an annual institutional arrangement.</p></div>
+    <div class="workflow-line">
+      <div class="workflow-item"><span>1</span><strong>Prompt</strong><small>Define the academic task</small></div>
+      <div class="workflow-arrow">→</div>
+      <div class="workflow-item"><span>2</span><strong>Keywords</strong><small>Shape metadata</small></div>
+      <div class="workflow-arrow">→</div>
+      <div class="workflow-item"><span>3</span><strong>Title</strong><small>Position the paper</small></div>
+      <div class="workflow-arrow">→</div>
+      <div class="workflow-item"><span>4</span><strong>Journal</strong><small>Find relevant targets</small></div>
+      <div class="workflow-arrow">→</div>
+      <div class="workflow-item"><span>5</span><strong>Cover Letter</strong><small>Prepare submission</small></div>
+      <div class="workflow-arrow">→</div>
+      <div class="workflow-item"><span>6</span><strong>Revision</strong><small>Answer reviewers</small></div>
     </div>
   </div>
 </section>
 
 <section class="section" id="pilot">
-  <div class="wrap">
-    <div class="pathway">
-      <div>
-        <div class="kicker" style="color:#7fefff">Institution-first pathway</div>
-        <h2>Public Demo → 30-Day Institutional Pilot → Tailored Institutional Licence</h2>
-        <p>The public tools let stakeholders evaluate the current product. The pilot is the structured bridge between a public demo and a longer-term institutional decision.</p>
-        <div class="path-steps">
-          <div class="path-step"><b>1. Explore</b><span>Stakeholders test all six public demos without installation.</span></div>
-          <div class="path-step"><b>2. Pilot</b><span>A limited 30-day evaluation is scoped around a defined institution and user group.</span></div>
-          <div class="path-step"><b>3. Decide</b><span>Feedback informs whether a tailored annual institutional licence is worth discussing.</span></div>
+  <div class="container">
+    <div class="institution-card">
+      <div class="institution-copy">
+        <span class="section-kicker light">For institutions</span>
+        <h2>Start with a 30-day pilot.</h2>
+        <p>Evaluate the toolkit with a defined group before discussing a longer-term institutional licence.</p>
+        <div class="pilot-path">
+          <div><span>01</span><strong>Public demo</strong><small>Explore all six tools</small></div>
+          <div><span>02</span><strong>30-day pilot</strong><small>Test with a defined group</small></div>
+          <div><span>03</span><strong>Institutional licence</strong><small>Discuss scope after evidence</small></div>
         </div>
       </div>
-      <div class="pilot-box">
-        <h3>A pilot can be scoped around</h3>
-        <ul><li>Selected or all six modules</li><li>Researcher / doctoral student onboarding</li><li>Library or graduate-school workshops</li><li>Structured evaluation and feedback</li><li>Future configuration requirements</li></ul>
-        <a class="btn btn-primary" href="#inquiry">Prepare a pilot enquiry</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section soft-section">
-  <div class="wrap">
-    <div class="section-head"><div class="kicker">Designed for academic institutions</div><h2>Who can use the toolkit?</h2><p>The public demo is open for evaluation. The institutional pathway is aimed at units that support research, doctoral education, publishing, or academic professional development.</p></div>
-    <div class="audience-grid">
-      <div class="aud-card"><h3>University Libraries</h3><p>Support information literacy, publication preparation, research support, and researcher development activities.</p></div>
-      <div class="aud-card"><h3>Graduate & Doctoral Schools</h3><p>Integrate focused academic AI tools into researcher training, academic writing, and publication-support programmes.</p></div>
-      <div class="aud-card"><h3>Research Offices & Groups</h3><p>Provide a shared workflow for prompt design, journal targeting, submission preparation, and reviewer-response work.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="plans">
-  <div class="wrap">
-    <div class="section-head"><div class="kicker">Engagement options</div><h2>Start with evidence, not a long contract.</h2><p>No fixed price is presented on the public site because institutional scope can vary by module mix, user group, onboarding, training, and configuration requirements.</p></div>
-    <div class="plan-grid">
-      <div class="plan"><span class="plan-label">Explore</span><div class="plan-title">Public Demo</div><p>For individual evaluation and internal discussion.</p><ul><li>Six public demo modules</li><li>No installation</li><li>Open evaluation workflow</li><li>Responsible-use notices</li></ul><a class="btn btn-ghost" href="#modules">Try all demos</a></div>
-      <div class="plan featured"><span class="plan-label">Recommended first step</span><div class="plan-title">30-Day Pilot</div><p>For a defined institution, unit, or user group.</p><ul><li>Agreed pilot scope</li><li>Selected or all modules</li><li>Onboarding / training discussion</li><li>Structured feedback</li><li>Fit assessment before licensing</li></ul><a class="btn btn-blue" href="#inquiry">Prepare pilot enquiry</a></div>
-      <div class="plan"><span class="plan-label">After pilot</span><div class="plan-title">Institutional Licence</div><p>For organisations that see a validated use case after evaluation.</p><ul><li>Tailored scope</li><li>Agreed module mix</li><li>Training / configuration options</li><li>Future institutional requirements discussed separately</li></ul><a class="btn btn-ghost" href="#inquiry">Discuss institutional scope</a></div>
-    </div>
-    <div class="note">The current public toolkit does not claim that authentication, payment infrastructure, institutional access control, or usage analytics already exist. Any such functionality should only be included in an institutional offer after it has been separately developed, tested, and agreed.</div>
-  </div>
-</section>
-
-<section class="section soft-section" id="inquiry">
-  <div class="wrap">
-    <div class="section-head"><div class="kicker">Pilot enquiry</div><h2>Create a structured institutional request in under a minute.</h2><p>This helper does not submit data to a server. It generates a short enquiry that can be copied and sent through the contact channel by which this demo was shared.</p></div>
-    <div class="inquiry">
-      <div class="inquiry-copy">
-        <h3>What a useful first conversation should establish</h3>
-        <p>A pilot is most useful when the institution identifies the target unit, approximate user group, modules of interest, and the outcome it wants to evaluate.</p>
-        <div class="contact-points">
-          <div class="contact-point"><div>①</div><div><b>Institution / unit</b><span>Library, graduate school, research office, programme, or research group.</span></div></div>
-          <div class="contact-point"><div>②</div><div><b>User group</b><span>Researchers, doctoral students, academic staff, or support professionals.</span></div></div>
-          <div class="contact-point"><div>③</div><div><b>Evaluation goal</b><span>Training value, workflow fit, module usefulness, or institutional deployment requirements.</span></div></div>
+      <div class="institution-side">
+        <div class="institution-list">
+          <div>University libraries</div>
+          <div>Graduate & doctoral schools</div>
+          <div>Research offices & groups</div>
+          <div>Academic writing support units</div>
         </div>
+        <a class="button button-white" href="#contact">Prepare a pilot enquiry</a>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="inquiry-form">
-        <h3>Institutional pilot brief</h3>
-        <div class="form-grid">
-          <div class="field"><label for="institution">Institution</label><input id="institution" placeholder="University / organisation"></div>
-          <div class="field"><label for="role">Unit / role</label><input id="role" placeholder="Library, Graduate School, Research Office..."></div>
-          <div class="field"><label for="size">Expected user group</label><select id="size"><option value="">Select</option><option>Up to 25 users</option><option>26–100 users</option><option>101–500 users</option><option>500+ users</option><option>To be determined</option></select></div>
-          <div class="field"><label>Modules of interest</label><div style="font-size:11px;color:#5c6d86;line-height:1.5">Leave all unchecked to indicate all six modules.</div></div>
-          <div class="field full"><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;font-size:11px;color:#40536d"><label><input type="checkbox" name="modules" value="Academic Prompt Generator"> Prompt</label><label><input type="checkbox" name="modules" value="Abstract2Keywords"> Keywords</label><label><input type="checkbox" name="modules" value="Abstract2Title"> Title</label><label><input type="checkbox" name="modules" value="Abstract2Journal"> Journal</label><label><input type="checkbox" name="modules" value="Abstract2CoverLetter"> Cover Letter</label><label><input type="checkbox" name="modules" value="Review Splitter"> Review Splitter</label></div></div>
-          <div class="field full"><label for="note">Additional note</label><textarea id="note" placeholder="What would you like the pilot to evaluate?"></textarea></div>
+<section class="section">
+  <div class="container">
+    <div class="section-heading compact">
+      <span class="section-kicker">Why it works</span>
+      <h2>Simple enough to try. Focused enough to use.</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit"><span>01</span><h3>Focused</h3><p>Each module solves one clearly defined academic task.</p></div>
+      <div class="benefit"><span>02</span><h3>Low-friction</h3><p>Public demos run in the browser without installation.</p></div>
+      <div class="benefit"><span>03</span><h3>Institution-ready</h3><p>A pilot-first pathway supports structured evaluation before licensing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-copy">
+      <span class="section-kicker">Pilot enquiry</span>
+      <h2>Build a short institutional brief.</h2>
+      <p>Enter the basic scope. The site will generate a concise enquiry you can copy and send through your preferred contact channel.</p>
+      <div class="contact-note">This form does not submit data to a server.</div>
+    </div>
+
+    <div class="contact-form">
+      <div class="form-row">
+        <label>Institution<input id="institution" placeholder="University / organisation"></label>
+        <label>Unit / role<input id="role" placeholder="Library, Graduate School..."></label>
+      </div>
+      <label>Expected user group
+        <select id="size">
+          <option value="">Select</option>
+          <option>Up to 25 users</option>
+          <option>26–100 users</option>
+          <option>101–500 users</option>
+          <option>500+ users</option>
+          <option>To be determined</option>
+        </select>
+      </label>
+
+      <fieldset>
+        <legend>Modules of interest</legend>
+        <div class="check-grid">
+          <label><input type="checkbox" name="modules" value="Academic Prompt Generator"> Prompt</label>
+          <label><input type="checkbox" name="modules" value="Abstract2Keywords"> Keywords</label>
+          <label><input type="checkbox" name="modules" value="Abstract2Title"> Title</label>
+          <label><input type="checkbox" name="modules" value="Abstract2Journal"> Journal</label>
+          <label><input type="checkbox" name="modules" value="Abstract2CoverLetter"> Cover Letter</label>
+          <label><input type="checkbox" name="modules" value="Review Splitter"> Review Splitter</label>
         </div>
-        <div class="form-actions"><button class="btn btn-blue" onclick="buildInquiry()">Generate enquiry</button><button class="btn btn-ghost" onclick="copyInquiry()">Copy enquiry</button></div>
-        <div class="generated" id="generatedInquiry"></div>
+      </fieldset>
+
+      <label>Additional note<textarea id="note" placeholder="What would you like the pilot to evaluate?"></textarea></label>
+      <div class="form-actions">
+        <button class="button button-primary" onclick="buildInquiry()">Generate enquiry</button>
+        <button class="button button-secondary-dark" onclick="copyInquiry()">Copy</button>
       </div>
+      <div class="generated" id="generatedInquiry"></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="responsible">
-  <div class="wrap">
-    <div class="section-head"><div class="kicker">Responsible academic use</div><h2>Decision support, not automatic academic judgement.</h2><p>The toolkit is designed to support academic workflows. It does not replace scholarly judgement, source verification, peer review, editorial decisions, or institutional research governance.</p></div>
-    <div class="responsible">
-      <div class="info-card"><h3>Privacy and data handling</h3><p>Several modules operate locally in the browser. Abstract2Journal uses OpenAlex to retrieve publication evidence. Users should avoid entering confidential or restricted information into public evaluation tools and should review each module’s own notes before institutional use.</p></div>
-      <div class="info-card"><h3>Scores are decision-support indicators</h3><p>Title Fit, Aims & Scope Fit, Cover Letter Quality, Prompt Quality, and Journal Fit are support scores, not guarantees of publication quality or journal acceptance. Journal Fit in particular is not an acceptance probability.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section soft-section" id="about">
-  <div class="wrap">
-    <div class="about">
-      <div class="profile"><div class="monogram">TD</div><h3>Prof. Dr. Taşkın Dirsehan</h3><p>Developer of the Academic AI Toolkit portfolio.</p><a class="btn btn-ghost" href="https://github.com/tdirsehan" target="_blank" rel="noopener">View GitHub portfolio ↗</a></div>
-      <div class="about-text"><div class="kicker">About the project</div><h2 style="margin-top:9px">Practical academic AI, organised around real publishing tasks.</h2><p>Academic AI Toolkit is built as a portfolio of focused browser-based applications rather than one general-purpose chatbot. Each module addresses a specific academic task, making the workflow easier to demonstrate, evaluate, teach, and discuss with institutions.</p><p>The commercial direction is intentionally institution-first: public demonstration, limited pilot, evidence gathering, and only then a tailored institutional decision.</p></div>
-    </div>
+<section class="section small-section">
+  <div class="container reassurance-grid">
+    <div><strong>Responsible use</strong><p>The toolkit supports academic work but does not replace scholarly judgement, source verification, peer review, or editorial decisions.</p></div>
+    <div><strong>Decision-support scores</strong><p>Prompt Quality, Title Fit, Journal Fit, and related scores are indicators — not guarantees of publication or acceptance.</p></div>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap footer">
-    <div>Academic AI Toolkit · Public evaluation site</div>
-    <div class="footerlinks"><a href="#modules">Demos</a><a href="#pilot">Pilot</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="https://github.com/tdirsehan" target="_blank" rel="noopener">GitHub</a></div>
+<footer class="footer">
+  <div class="container footer-row">
+    <div><strong>Academic AI Toolkit</strong><span>Practical academic tools for research and publishing.</span></div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://github.com/tdirsehan" target="_blank" rel="noopener">GitHub</a>
+    </div>
   </div>
 </footer>
 
 <div class="demo-modal" id="demoModal" aria-hidden="true">
   <div class="demo-shell">
-    <div class="demo-bar"><div class="demo-title" id="demoTitle">Live demo</div><span class="demo-fallback">If the embedded view is restricted, open the full demo.</span><div class="demo-bar-actions"><a id="fullDemo" href="#" target="_blank" rel="noopener">Open full demo ↗</a><button onclick="closeDemo()">Close ✕</button></div></div>
+    <div class="demo-bar">
+      <div id="demoTitle">Live demo</div>
+      <div class="demo-bar-actions">
+        <a id="fullDemo" href="#" target="_blank" rel="noopener">Open full ↗</a>
+        <button onclick="closeDemo()">Close</button>
+      </div>
+    </div>
     <iframe class="demo-frame" id="demoFrame" title="Academic AI Toolkit live demo" src="about:blank"></iframe>
   </div>
 </div>
