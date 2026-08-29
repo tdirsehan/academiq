@@ -35,7 +35,7 @@ function buildInquiry(){
   const modules=[...document.querySelectorAll('input[name="modules"]:checked')].map(x=>x.value);
   const note=document.getElementById('note').value.trim();
   const moduleText=modules.length?modules.join(', '):'All six modules';
-  const message=`Institutional Pilot Enquiry\n\nInstitution: ${institution}\nUnit / role: ${role}\nExpected user group: ${size}\nModules of interest: ${moduleText}\nPilot preference: 30-day institutional evaluation\n${note?`Additional note: ${note}\n`:''}\nWe would like to discuss a limited institutional pilot of Academic AI Toolkit and, if appropriate, a tailored annual institutional licence.`;
+  const message=`AcademIQ Institutional Pilot Enquiry\n\nInstitution: ${institution}\nUnit / role: ${role}\nExpected user group: ${size}\nModules of interest: ${moduleText}\nPilot preference: 30-day institutional evaluation\n${note?`Additional note: ${note}\n`:''}\nWe would like to discuss a limited institutional pilot of AcademIQ — The Academic AI Toolkit and, if appropriate, a tailored annual institutional licence.`;
   const box=document.getElementById('generatedInquiry');
   box.textContent=message;
   box.style.display='block';
