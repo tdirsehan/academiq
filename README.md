@@ -1,46 +1,70 @@
 # Academic AI Toolkit
 
-Academic AI Toolkit is a portfolio of four lightweight academic web applications developed by Prof. Dr. Taşkın Dirsehan to support research and publishing workflows from prompt development to journal targeting.
+Academic AI Toolkit is a portfolio of six focused academic web applications developed by Prof. Dr. Taşkın Dirsehan to support research and publishing workflows from prompt development to journal submission and reviewer response.
 
 ## Live website
 
 https://tdirsehan.github.io/academic-ai-toolkit/
 
-## Public demo tools
+## Public demo modules
 
-1. Akademik Komut Geliştirici  
-https://tdirsehan.github.io/akademik-komut-gelistirici/
+1. Academic Prompt Generator  
+https://tdirsehan.github.io/academic-prompt-generator/
 
-2. Review Splitter  
-https://tdirsehan.github.io/review-splitter/
-
-3. Abstract2Keywords  
+2. Abstract2Keywords  
 https://tdirsehan.github.io/abstract2keywords/
+
+3. Abstract2Title  
+https://tdirsehan.github.io/abstract2title/
 
 4. Abstract2Journal  
 https://tdirsehan.github.io/abstract2journal/
 
+5. Abstract2CoverLetter  
+https://tdirsehan.github.io/abstract2coverletter/
+
+6. Review Splitter  
+https://tdirsehan.github.io/review-splitter/
+
+The main website also provides an embedded live-demo launcher so stakeholders can test modules without first leaving the toolkit site. Each module can also be opened in its own full-screen GitHub Pages application.
+
+## Integrated workflow
+
+Research need
+→ Academic Prompt Generator
+→ Abstract2Keywords
+→ Abstract2Title
+→ Abstract2Journal
+→ Abstract2CoverLetter
+→ Review Splitter
+
+The tools are modular and can be used independently.
+
 ## Commercial direction
 
-The current public applications are evaluation versions. The project is positioned around an institution-first pathway:
+The current public applications are evaluation versions. The project follows an institution-first pathway:
 
 Public Demo → 30-Day Institutional Pilot → Tailored Institutional Licence
 
-The institutional value proposition is not simply access to four public links. A pilot or paid engagement can be scoped around onboarding, academic training, evaluation support, tailored configuration, access requirements, and future institutional functionality.
+The institutional value proposition is not simply access to public links. A pilot or paid engagement can be scoped around onboarding, academic training, evaluation support, tailored configuration, access requirements, and future institutional functionality.
 
-The site deliberately does not claim that authentication, analytics, payment infrastructure, or institutional access control already exists. Those capabilities should only be offered when they have been separately developed and agreed.
+The site deliberately does not claim that authentication, usage analytics, payment infrastructure, or institutional access control already exists. Those capabilities should only be offered when they have been separately developed, tested, and agreed.
 
 ## Intended institutional audiences
 
 - University libraries
 - Graduate and doctoral schools
-- Research groups
+- Research offices and research groups
 - Academic writing and research-support units
 - Continuing education and professional development centres
 
 ## Responsible use
 
-The toolkit supports academic work but does not replace scholarly judgement, peer review, editorial decisions, source verification, or institutional research governance. Abstract2Journal fit scores are not acceptance probabilities.
+The toolkit supports academic work but does not replace scholarly judgement, peer review, editorial decisions, source verification, or institutional research governance.
+
+Scores such as Prompt Quality, Title Fit, Journal Fit, Aims & Scope Fit, and Cover Letter Quality are decision-support indicators rather than guarantees. Journal Fit is not an acceptance probability.
+
+Abstract2Journal uses OpenAlex to retrieve publication evidence. Other modules may operate locally in the browser as described in their individual repositories.
 
 ## Legal / information pages
 
