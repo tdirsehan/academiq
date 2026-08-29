@@ -1,6 +1,6 @@
-# Academic AI Toolkit
+# AcademIQ Tools
 
-Academic AI Toolkit is a portfolio of six focused academic web applications developed by Prof. Dr. Taşkın Dirsehan to support research and publishing workflows from prompt development to journal submission and reviewer response.
+AcademIQ Tools is a portfolio of six focused academic web applications developed by Prof. Dr. Taşkın Dirsehan to support research and publishing workflows from prompt development to journal submission and reviewer response.
 
 ## Live website
 
@@ -26,7 +26,7 @@ https://tdirsehan.github.io/abstract2coverletter/
 6. Review Splitter  
 https://tdirsehan.github.io/review-splitter/
 
-The main website also provides an embedded live-demo launcher so stakeholders can test modules without first leaving the toolkit site. Each module can also be opened in its own full-screen GitHub Pages application.
+The main website also provides an embedded live-demo launcher so stakeholders can test modules without first leaving the site. Each module can also be opened in its own full-screen GitHub Pages application.
 
 ## Integrated workflow
 
@@ -60,7 +60,7 @@ The site deliberately does not claim that authentication, usage analytics, payme
 
 ## Responsible use
 
-The toolkit supports academic work but does not replace scholarly judgement, peer review, editorial decisions, source verification, or institutional research governance.
+AcademIQ Tools supports academic work but does not replace scholarly judgement, peer review, editorial decisions, source verification, or institutional research governance.
 
 Scores such as Prompt Quality, Title Fit, Journal Fit, Aims & Scope Fit, and Cover Letter Quality are decision-support indicators rather than guarantees. Journal Fit is not an acceptance probability.
 
