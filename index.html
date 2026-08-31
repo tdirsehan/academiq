@@ -7,6 +7,20 @@
 <meta name="description" content="AcademIQ Tools: six practical browser-based tools supporting the academic research-to-publication workflow.">
 <title>AcademIQ Tools</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+.research-journey-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+.journey-card{position:relative;display:flex;flex-direction:column;min-height:170px;padding:20px 18px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 8px 24px rgba(15,23,42,.04)}
+.journey-number{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--blue-soft);color:var(--blue);font-size:10px;font-weight:900;margin-bottom:16px}
+.journey-card h3{font-size:16px;line-height:1.25;letter-spacing:-.02em;margin:0 0 8px}
+.journey-card p{margin:0 0 18px;color:var(--muted);font-size:11px;line-height:1.5}
+.journey-tool{display:inline-flex;align-items:center;width:max-content;max-width:100%;margin-top:auto;padding:8px 10px;border-radius:10px;background:var(--navy);color:#fff;text-decoration:none;font-size:10px;font-weight:850;line-height:1.25}
+.journey-tool:hover{background:var(--blue)}
+.journey-card.manual .journey-number{background:#f1f5f9;color:#64748b}
+.journey-card.manual .journey-tool{background:#f8fafc;color:#64748b;border:1px solid var(--line);cursor:default}
+.journey-caption{margin-top:18px;color:var(--muted);font-size:12px;line-height:1.55}
+@media(max-width:980px){.research-journey-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.research-journey-grid{grid-template-columns:1fr}.journey-card{min-height:auto}}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -139,22 +153,70 @@
 <section class="section section-soft" id="workflow">
   <div class="container">
     <div class="section-heading compact">
-      <span class="section-kicker">One connected research workflow</span>
-      <h2>Use one module or follow the research-to-publication journey.</h2>
+      <span class="section-kicker">Research Journey</span>
+      <h2>From research idea to peer-review revision.</h2>
+      <p>See each major research step and the AcademIQ tool that can support it. Steps without a dedicated AcademIQ module are clearly marked as manual.</p>
     </div>
-    <div class="workflow-line">
-      <div class="workflow-item"><span>1</span><strong>Prompt</strong><small>Frame the research task</small></div>
-      <div class="workflow-arrow">→</div>
-      <div class="workflow-item"><span>2</span><strong>Keywords</strong><small>Communicate the research</small></div>
-      <div class="workflow-arrow">→</div>
-      <div class="workflow-item"><span>3</span><strong>Title</strong><small>Position the manuscript</small></div>
-      <div class="workflow-arrow">→</div>
-      <div class="workflow-item"><span>4</span><strong>Journal</strong><small>Select relevant outlets</small></div>
-      <div class="workflow-arrow">→</div>
-      <div class="workflow-item"><span>5</span><strong>Cover Letter</strong><small>Prepare submission</small></div>
-      <div class="workflow-arrow">→</div>
-      <div class="workflow-item"><span>6</span><strong>Revision</strong><small>Answer reviewers</small></div>
+
+    <div class="research-journey-grid">
+      <article class="journey-card manual">
+        <span class="journey-number">01</span>
+        <h3>Research Idea</h3>
+        <p>Develop the initial research idea, problem, and direction.</p>
+        <span class="journey-tool">Manual</span>
+      </article>
+
+      <article class="journey-card manual">
+        <span class="journey-number">02</span>
+        <h3>Literature Review</h3>
+        <p>Search, read, evaluate, and synthesize the relevant literature.</p>
+        <span class="journey-tool">Manual</span>
+      </article>
+
+      <article class="journey-card">
+        <span class="journey-number">03</span>
+        <h3>Research Framing</h3>
+        <p>Structure the research task and create a rigorous academic AI prompt.</p>
+        <a class="journey-tool" href="https://tdirsehan.github.io/academic-prompt-generator/" target="_blank" rel="noopener">Academic Prompt Generator ↗</a>
+      </article>
+
+      <article class="journey-card">
+        <span class="journey-number">04</span>
+        <h3>Keywords</h3>
+        <p>Identify publication-oriented keywords that communicate the study.</p>
+        <a class="journey-tool" href="https://tdirsehan.github.io/abstract2keywords/" target="_blank" rel="noopener">Abstract2Keywords ↗</a>
+      </article>
+
+      <article class="journey-card">
+        <span class="journey-number">05</span>
+        <h3>Title</h3>
+        <p>Develop and compare publication-ready manuscript titles.</p>
+        <a class="journey-tool" href="https://tdirsehan.github.io/abstract2title/" target="_blank" rel="noopener">Abstract2Title ↗</a>
+      </article>
+
+      <article class="journey-card">
+        <span class="journey-number">06</span>
+        <h3>Journal Selection</h3>
+        <p>Identify relevant journals and evidence-based publication matches.</p>
+        <a class="journey-tool" href="https://tdirsehan.github.io/abstract2journal/" target="_blank" rel="noopener">Abstract2Journal ↗</a>
+      </article>
+
+      <article class="journey-card">
+        <span class="journey-number">07</span>
+        <h3>Submission</h3>
+        <p>Prepare a journal-focused cover letter for manuscript submission.</p>
+        <a class="journey-tool" href="https://tdirsehan.github.io/abstract2coverletter/" target="_blank" rel="noopener">Abstract2CoverLetter ↗</a>
+      </article>
+
+      <article class="journey-card">
+        <span class="journey-number">08</span>
+        <h3>Peer Review & Revision</h3>
+        <p>Split reviewer comments and prepare structured point-by-point responses.</p>
+        <a class="journey-tool" href="https://tdirsehan.github.io/review-splitter/" target="_blank" rel="noopener">Review Splitter ↗</a>
+      </article>
     </div>
+
+    <p class="journey-caption">AcademIQ complements scholarly judgement: the researcher remains responsible for literature evaluation, methodological decisions, source verification, and final academic content.</p>
   </div>
 </section>
 
