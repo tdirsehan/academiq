@@ -4,7 +4,7 @@ AcademIQ Tools is a portfolio of six focused academic web applications developed
 
 ## Live website
 
-https://tdirsehan.github.io/academic-ai-toolkit/
+https://tdirsehan.github.io/academiq/
 
 ## Public demo modules
 
@@ -67,5 +67,5 @@ Abstract2Journal uses OpenAlex to retrieve publication evidence. Other modules m
 
 ## Legal / information pages
 
-- Privacy: https://tdirsehan.github.io/academic-ai-toolkit/privacy.html
-- Terms: https://tdirsehan.github.io/academic-ai-toolkit/terms.html
+- Privacy: https://tdirsehan.github.io/academiq/privacy.html
+- Terms: https://tdirsehan.github.io/academiq/terms.html
