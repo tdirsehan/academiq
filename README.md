@@ -1,6 +1,6 @@
 # AcademIQ Tools
 
-AcademIQ Tools is a portfolio of six focused academic web applications developed by Prof. Dr. Taşkın Dirsehan to support research and publishing workflows from prompt development to journal submission and reviewer response.
+AcademIQ Tools is a portfolio of six focused academic web applications developed by Prof. Dr. Taşkın Dirsehan to support the research-to-publication process from framing the academic task to journal submission and reviewer response.
 
 ## Live website
 
@@ -28,17 +28,16 @@ https://tdirsehan.github.io/review-splitter/
 
 The main website also provides an embedded live-demo launcher so stakeholders can test modules without first leaving the site. Each module can also be opened in its own full-screen GitHub Pages application.
 
-## Integrated workflow
+## Integrated research workflow
 
-Research need
-→ Academic Prompt Generator
+Research task / prompt
 → Abstract2Keywords
 → Abstract2Title
 → Abstract2Journal
 → Abstract2CoverLetter
 → Review Splitter
 
-The tools are modular and can be used independently.
+The tools are modular and can be used independently. Together they support distinct stages in the research-to-publication journey.
 
 ## Commercial direction
 
