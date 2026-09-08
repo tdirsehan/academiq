@@ -6,7 +6,7 @@ AcademIQ Tools is a portfolio of seven focused academic web applications develop
 
 https://tdirsehan.github.io/academiq/
 
-## Public demo modules
+## Free public tools
 
 1. Academic Prompt Generator  
 https://tdirsehan.github.io/academic-prompt-generator/
@@ -29,7 +29,7 @@ https://tdirsehan.github.io/abstract2coverletter/
 7. Review Splitter  
 https://tdirsehan.github.io/review-splitter/
 
-The main website also provides an embedded live-demo launcher so stakeholders can test modules without first leaving the site. Each module can also be opened in its own full-screen GitHub Pages application.
+All seven tools are freely accessible. There is no subscription, institutional licence, or required payment. The main website also provides an embedded launcher so tools can be used without first leaving the AcademIQ landing page, while each tool can also be opened directly in its own GitHub Pages application.
 
 ## Integrated research workflow
 
@@ -49,23 +49,15 @@ Data2Analysis accepts CSV, TSV, XLSX and XLS files in the browser. It diagnoses 
 
 Current quantitative analyses include descriptive statistics, frequency analysis, Pearson correlation, Welch independent-samples t-test, one-way ANOVA, chi-square test of independence with Cramér's V, and simple linear regression. The qualitative module provides lexical exploration using term and bigram frequency plus representative-text retrieval; it is not presented as a replacement for human qualitative coding or full thematic analysis.
 
-## Commercial direction
+## Open-access and donation-supported model
 
-The current public applications are evaluation versions. The project follows an institution-first pathway:
+AcademIQ follows a free-access model:
 
-Public Demo → 30-Day Institutional Pilot → Tailored Institutional Licence
+Free Access → Optional Donation → Continued Maintenance and Development
 
-The institutional value proposition is not simply access to public links. A pilot or paid engagement can be scoped around onboarding, academic training, evaluation support, tailored configuration, access requirements, and future institutional functionality.
+Donations are voluntary. A donation does not unlock additional access, features, or service commitments. All users receive the same public access to the available AcademIQ tools.
 
-The site deliberately does not claim that authentication, usage analytics, payment infrastructure, or institutional access control already exists. Those capabilities should only be offered when they have been separately developed, tested, and agreed.
-
-## Intended institutional audiences
-
-- University libraries
-- Graduate and doctoral schools
-- Research offices and research groups
-- Academic writing and research-support units
-- Continuing education and professional development centres
+Support link: https://github.com/sponsors/tdirsehan
 
 ## Responsible use
 
