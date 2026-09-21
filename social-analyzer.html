@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AcademIQ Social Analyzer</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#182033;--muted:#687386;--line:#dde3ec;--blue:#3156d8;--pos:#14865b;--neg:#bc3651;--neu:#748096}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:28px 18px 60px}h1{margin:0;font-size:30px}.sub{color:var(--muted);margin:7px 0 22px;line-height:1.5}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px;box-shadow:0 8px 28px rgba(20,33,60,.06)}
+.tabs{display:flex;gap:8px;margin-bottom:14px}.tab,.btn{border:0;border-radius:10px;padding:10px 14px;font-weight:750;cursor:pointer}.tab{background:#edf1f7;color:#374151}.tab.active,.btn{background:var(--blue);color:white}
+.btn.alt{background:#edf1f7;color:#263246}.btn.ghost{background:#fff;color:#263246;border:1px solid var(--line)}
+label{display:block;font-size:13px;font-weight:750;margin:12px 0 6px}input,textarea,select{width:100%;border:1px solid #cfd6e2;border-radius:10px;padding:11px;font:inherit;background:white}textarea{min-height:110px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.hint,.status,.note{font-size:12px;line-height:1.5;color:var(--muted)}.status{display:none;margin-top:12px;padding:10px;border-radius:9px;background:#eef2f8}.status.show{display:block}.status.error{background:#fff0f2;color:#981b35}.status.ok{background:#ecfaf3;color:#12673f}
+.hide{display:none!important}.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.kpi{background:white;border:1px solid var(--line);border-radius:13px;padding:14px}.kpi b{display:block;font-size:23px}.kpi span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.bar{height:12px;background:#edf1f6;border-radius:999px;overflow:hidden;margin:5px 0 12px}.bar i{display:block;height:100%}.pos{background:var(--pos)}.neg{background:var(--neg)}.neu{background:var(--neu)}
+.tags{display:flex;flex-wrap:wrap;gap:7px}.tag{background:#eef2ff;color:#2f4db5;border-radius:999px;padding:6px 9px;font-size:12px}
+.tools{display:grid;grid-template-columns:1.3fr .6fr .6fr;gap:10px;margin:12px 0}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:820px;font-size:13px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f7f9fc;position:sticky;top:0}
+.badge{display:inline-block;border-radius:999px;padding:4px 7px;font-size:11px;font-weight:750}.badge.positive{background:#e8f7f0;color:#107249}.badge.negative{background:#fdecef;color:#a72c44}.badge.neutral{background:#edf0f4;color:#5f6b7d}
+a{color:#3156d8}.small{font-size:11px;color:var(--muted)}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:1fr}}@media(max-width:600px){.kpis{grid-template-columns:repeat(2,1fr)}.row,.tools{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>AcademIQ Social Analyzer</h1>
+<div class="sub">YouTube veya Instagram yorumlarını çekerek keşifsel etkileşim, duygu, soru/şikâyet sinyali ve anahtar sözcük analizi yapar.</div>
+
+<div class="card">
+<div class="tabs">
+<button class="tab active" data-p="youtube">YouTube</button>
+<button class="tab" data-p="instagram">Instagram</button>
+</div>
+
+<div id="ytBox">
+<label>YouTube Data API anahtarı</label>
+<input id="ytKey" type="password" placeholder="AIza..." autocomplete="off">
+<div class="hint">YouTube Data API v3 anahtarı yalnızca bu tarayıcı oturumunda kullanılır; kaynak koda veya localStorage'a kaydedilmez.</div>
+</div>
+
+<div id="igBox" class="hide">
+<label>Apify API token</label>
+<input id="igKey" type="password" placeholder="apify_api_..." autocomplete="off">
+<div class="hint">Instagram için herkese açık gönderi/Reel yorumları Apify Instagram Comments Scraper üzerinden alınır. Apify kullanımı kendi planınıza göre ücret doğurabilir.</div>
+</div>
+
+<label id="urlLabel">YouTube video linkleri</label>
+<textarea id="urls" placeholder="Her satıra bir bağlantı yapıştırın"></textarea>
+
+<div class="row">
+<div><label>Yorum limiti / bağlantı</label><input id="limit" type="number" min="10" max="500" value="100"></div>
+<div><label>Sıralama</label><select id="order"><option value="relevance">Öne çıkanlar</option><option value="time">En yeni</option></select></div>
+</div>
+
+<div class="actions">
+<button class="btn" id="run">Veriyi çek ve analiz et</button>
+<button class="btn alt" id="demo">Demo veri</button>
+<button class="btn ghost" id="clear">Temizle</button>
+</div>
+<div id="status" class="status"></div>
+</div>
+
+<div id="results" class="hide">
+<div class="kpis">
+<div class="kpi"><b id="nComments">0</b><span>Yorum</span></div>
+<div class="kpi"><b id="nAuthors">0</b><span>Tekil yazar</span></div>
+<div class="kpi"><b id="nLikes">0</b><span>Yorum beğenisi</span></div>
+<div class="kpi"><b id="nPos">0%</b><span>Olumlu</span></div>
+<div class="kpi"><b id="nNeg">0%</b><span>Olumsuz</span></div>
+<div class="kpi"><b id="nQ">0%</b><span>Soru içeren</span></div>
+</div>
+
+<div class="grid" style="margin-top:16px">
+<div class="card"><h3>Duygu dağılımı</h3><div>Olumlu <span id="pPos"></span></div><div class="bar"><i id="bPos" class="pos"></i></div><div>Nötr <span id="pNeu"></span></div><div class="bar"><i id="bNeu" class="neu"></i></div><div>Olumsuz <span id="pNeg"></span></div><div class="bar"><i id="bNeg" class="neg"></i></div></div>
+<div class="card"><h3>Otomatik özet</h3><div id="summary"></div></div>
+</div>
+
+<div class="grid">
+<div class="card"><h3>Öne çıkan sözcükler</h3><div id="keywords" class="tags"></div></div>
+<div class="card"><h3>Sinyaller</h3><div id="signals" class="tags"></div></div>
+</div>
+
+<div class="card">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><h3 style="margin:0">Yorum verisi</h3><div class="actions" style="margin:0"><button class="btn alt" id="csv">CSV indir</button></div></div>
+<div class="tools"><input id="search" placeholder="Yorumlarda ara"><select id="sent"><option value="all">Tüm duygular</option><option value="positive">Olumlu</option><option value="neutral">Nötr</option><option value="negative">Olumsuz</option></select><select id="sort"><option value="date">En yeni</option><option value="likes">En çok beğeni</option></select></div>
+<div class="tablewrap"><table><thead><tr><th>Platform</th><th>Yazar</th><th>Yorum</th><th>Duygu</th><th>Beğeni</th><th>Tarih</th><th>Kaynak</th></tr></thead><tbody id="tbody"></tbody></table></div>
+<div class="note" style="margin-top:12px">Not: Duygu analizi Türkçe ve İngilizce sözcük/örüntü tabanlı keşifsel bir sınıflandırmadır. Akademik kullanımda geçerlilik kontrolü ve gerektiğinde daha gelişmiş NLP modelleri önerilir.</div>
+</div>
+</div>
+</div>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+let platform='youtube', comments=[];
+const POS=['iyi','güzel','harika','mükemmel','faydalı','teşekkür','başarılı','beğendim','seviyorum','süper','great','good','excellent','amazing','love','helpful','thanks','perfect','awesome'];
+const NEG=['kötü','berbat','sorun','problem','pahalı','bozuk','geç','şikayet','memnun değil','yanlış','eksik','poor','bad','terrible','problem','expensive','broken','late','wrong','disappointed'];
+const STOP=new Set(('ve veya ile için bu şu bir çok daha ama gibi kadar olan olarak da de mi mı mu mü ben sen biz siz onlar the a an and or but for with this that is are was were to of in on it very my your our').split(' '));
+function norm(s){return String(s||'').toLocaleLowerCase('tr-TR').replace(/https?:\/\/\S+/g,' ').replace(/[^a-zçğıöşü0-9\s]/gi,' ').replace(/\s+/g,' ').trim()}
+function classify(t){const n=norm(t);let p=0,m=0;POS.forEach(w=>{if(n.includes(w))p++});NEG.forEach(w=>{if(n.includes(w))m++});return p>m?'positive':m>p?'negative':'neutral'}
+function question(t){return /\?|\b(nasıl|neden|niçin|ne zaman|nerede|kim|kaç|hangi|how|why|when|where|who|which)\b/i.test(t)}
+function complaint(t){return /sorun|problem|şikayet|kötü|bozuk|pahalı|geç kald|yanlış|eksik|bad|terrible|broken|expensive|late|wrong|disappoint/i.test(t)}
+function videoId(u){try{const x=new URL(u.trim());if(x.hostname.includes('youtu.be'))return x.pathname.slice(1).split('/')[0];if(x.searchParams.get('v'))return x.searchParams.get('v');const m=x.pathname.match(/\/(shorts|embed|live)\/([^/?]+)/);return m?m[2]:''}catch{return ''}}
+function setStatus(t,type){const e=$('#status');e.textContent=t;e.className='status show'+(type?' '+type:'')}
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function pct(n,d){return d?Math.round(100*n/d):0}
+function fmt(n){return new Intl.NumberFormat('tr-TR').format(n)}
+$$('.tab').forEach(b=>b.onclick=()=>{platform=b.dataset.p;$$('.tab').forEach(x=>x.classList.toggle('active',x===b));$('#ytBox').classList.toggle('hide',platform!=='youtube');$('#igBox').classList.toggle('hide',platform!=='instagram');$('#urlLabel').textContent=platform==='youtube'?'YouTube video linkleri':'Instagram post / Reel linkleri';$('#order').disabled=platform==='instagram'});
+async function fetchYouTube(){
+ const key=$('#ytKey').value.trim(),urls=$('#urls').value.split(/\n+/).map(x=>x.trim()).filter(Boolean),limit=Math.max(10,Math.min(500,+$('#limit').value||100)),order=$('#order').value;
+ if(!key)throw Error('YouTube API anahtarını girin.');if(!urls.length)throw Error('En az bir YouTube bağlantısı girin.');
+ const out=[];
+ for(const u of urls){const id=videoId(u);if(!id)throw Error('Video ID okunamadı: '+u);let token='',count=0;
+  do{const max=Math.min(100,limit-count);const ep='https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId='+encodeURIComponent(id)+'&maxResults='+max+'&order='+order+'&textFormat=plainText&key='+encodeURIComponent(key)+(token?'&pageToken='+encodeURIComponent(token):'');
+   const r=await fetch(ep);const j=await r.json();if(!r.ok)throw Error(j.error?.message||'YouTube API hatası');
+   for(const it of j.items||[]){const s=it.snippet.topLevelComment.snippet;out.push({platform:'YouTube',source:u,author:s.authorDisplayName||'',text:s.textDisplay||'',likes:+s.likeCount||0,date:s.publishedAt||'',reply:false});count++;if(count>=limit)break;
+    for(const rp of it.replies?.comments||[]){if(count>=limit)break;const z=rp.snippet;out.push({platform:'YouTube',source:u,author:z.authorDisplayName||'',text:z.textDisplay||'',likes:+z.likeCount||0,date:z.publishedAt||'',reply:true});count++}
+   }token=j.nextPageToken||'';
+  }while(token&&count<limit)
+ }return out
+}
+async function fetchInstagram(){
+ const key=$('#igKey').value.trim(),urls=$('#urls').value.split(/\n+/).map(x=>x.trim()).filter(Boolean),limit=Math.max(10,Math.min(500,+$('#limit').value||100));
+ if(!key)throw Error('Apify API token girin.');if(!urls.length)throw Error('En az bir Instagram bağlantısı girin.');
+ const ep='https://api.apify.com/v2/acts/apify~instagram-comment-scraper/run-sync-get-dataset-items?token='+encodeURIComponent(key);
+ const r=await fetch(ep,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({directUrls:urls,resultsLimit:limit})});const j=await r.json();if(!r.ok)throw Error(j.error?.message||'Apify hatası');
+ const out=[];for(const c of Array.isArray(j)?j:[]){out.push({platform:'Instagram',source:c.inputUrl||c.postUrl||urls[0],author:c.ownerUsername||c.username||c.owner?.username||'',text:c.text||c.comment||'',likes:+(c.likesCount??c.comment_like_count??0),date:c.timestamp||c.created_at||'',reply:false});for(const z of c.replies||[])out.push({platform:'Instagram',source:c.inputUrl||c.postUrl||urls[0],author:z.ownerUsername||z.username||'',text:z.text||z.comment||'',likes:+(z.likesCount??0),date:z.timestamp||'',reply:true})}return out
+}
+function keywords(){
+ const m=new Map();comments.forEach(c=>norm(c.text).split(' ').forEach(w=>{if(w.length>2&&!STOP.has(w)&&!/^[0-9]+$/.test(w))m.set(w,(m.get(w)||0)+1)}));return [...m].sort((a,b)=>b[1]-a[1]).slice(0,18)
+}
+function render(){
+ comments=comments.filter(c=>c.text&&c.text.trim()).map(c=>({...c,sentiment:classify(c.text),q:question(c.text),complaint:complaint(c.text),d:c.date?new Date(c.date):null}));
+ if(!comments.length)throw Error('Yorum bulunamadı.');
+ const n=comments.length,pos=comments.filter(x=>x.sentiment==='positive').length,neg=comments.filter(x=>x.sentiment==='negative').length,neu=n-pos-neg,q=comments.filter(x=>x.q).length,comp=comments.filter(x=>x.complaint).length,likes=comments.reduce((a,b)=>a+(b.likes||0),0),authors=new Set(comments.map(x=>x.author).filter(Boolean)).size;
+ $('#nComments').textContent=fmt(n);$('#nAuthors').textContent=fmt(authors);$('#nLikes').textContent=fmt(likes);$('#nPos').textContent=pct(pos,n)+'%';$('#nNeg').textContent=pct(neg,n)+'%';$('#nQ').textContent=pct(q,n)+'%';
+ [['Pos',pos],['Neu',neu],['Neg',neg]].forEach(([k,v])=>{$('#p'+k).textContent=pct(v,n)+'%';$('#b'+k).style.width=pct(v,n)+'%'});
+ const dom=pos>neg&&pos>neu?'olumlu':neg>pos&&neg>neu?'olumsuz':'nötr';
+ const top=[...comments].sort((a,b)=>b.likes-a.likes)[0];
+ $('#summary').innerHTML='<p><b>'+fmt(n)+'</b> yorum ve <b>'+fmt(authors)+'</b> tekil yazar incelendi.</p><p>Baskın keşifsel duygu sınıfı <b>'+dom+'</b>: olumlu %'+pct(pos,n)+', nötr %'+pct(neu,n)+', olumsuz %'+pct(neg,n)+'.</p><p>Yorumların %'+pct(q,n)+'i soru, %'+pct(comp,n)+'i şikâyet/problem sinyali içeriyor.</p>'+(top?'<p>En çok beğeni alan yorum ('+fmt(top.likes)+'): “'+esc(top.text.slice(0,180))+(top.text.length>180?'…':'')+'”</p>':'');
+ $('#keywords').innerHTML=keywords().map(x=>'<span class="tag">'+esc(x[0])+' · '+x[1]+'</span>').join('');
+ $('#signals').innerHTML='<span class="tag">Olumlu %'+pct(pos,n)+'</span><span class="tag">Olumsuz %'+pct(neg,n)+'</span><span class="tag">Soru %'+pct(q,n)+'</span><span class="tag">Şikâyet %'+pct(comp,n)+'</span><span class="tag">Yanıt '+comments.filter(x=>x.reply).length+'</span>';
+ $('#results').classList.remove('hide');table();setStatus(fmt(n)+' yorum başarıyla analiz edildi.','ok')
+}
+function filtered(){let a=[...comments],q=norm($('#search').value),s=$('#sent').value;if(q)a=a.filter(x=>norm(x.text+' '+x.author).includes(q));if(s!=='all')a=a.filter(x=>x.sentiment===s);if($('#sort').value==='likes')a.sort((x,y)=>y.likes-x.likes);else a.sort((x,y)=>(y.d||0)-(x.d||0));return a}
+function table(){$('#tbody').innerHTML=filtered().map(c=>'<tr><td>'+c.platform+'</td><td>'+esc(c.author||'—')+(c.reply?'<div class="small">yanıt</div>':'')+'</td><td>'+esc(c.text)+'</td><td><span class="badge '+c.sentiment+'">'+(c.sentiment==='positive'?'Olumlu':c.sentiment==='negative'?'Olumsuz':'Nötr')+'</span></td><td>'+fmt(c.likes||0)+'</td><td>'+(c.d&&!isNaN(c.d)?c.d.toLocaleString('tr-TR'):'—')+'</td><td><a href="'+esc(c.source)+'" target="_blank" rel="noopener">Aç</a></td></tr>').join('')}
+['#search','#sent','#sort'].forEach(x=>$(x).addEventListener('input',table));
+$('#run').onclick=async()=>{try{$('#run').disabled=true;setStatus('Veri alınıyor…');comments=platform==='youtube'?await fetchYouTube():await fetchInstagram();render()}catch(e){setStatus(e.message||String(e),'error')}finally{$('#run').disabled=false}};
+$('#demo').onclick=()=>{comments=[{platform:'YouTube',source:'#',author:'A',text:'Çok faydalı ve güzel bir anlatım, teşekkürler!',likes:42,date:'2026-09-18T10:20:00Z'},{platform:'YouTube',source:'#',author:'B',text:'Bu yöntemi nasıl uygulayabiliriz?',likes:12,date:'2026-09-18T12:10:00Z'},{platform:'YouTube',source:'#',author:'C',text:'Ses kalitesi kötü, bazı yerleri anlamadım.',likes:8,date:'2026-09-19T08:30:00Z'},{platform:'Instagram',source:'#',author:'D',text:'Love this! Amazing idea',likes:76,date:'2026-09-20T11:45:00Z'},{platform:'Instagram',source:'#',author:'E',text:'Fiyat çok pahalı, bu yüzden almam.',likes:17,date:'2026-09-20T09:05:00Z'}];render()};
+$('#clear').onclick=()=>{comments=[];$('#urls').value='';$('#results').classList.add('hide');$('#status').className='status'};
+$('#csv').onclick=()=>{const rows=[['platform','author','text','sentiment','likes','date','source_url','is_reply','question','complaint']];comments.forEach(c=>rows.push([c.platform,c.author,c.text,c.sentiment,c.likes,c.date,c.source,c.reply,c.q,c.complaint]));const escCsv=v=>{v=String(v??'');return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};const blob=new Blob(['\ufeff'+rows.map(r=>r.map(escCsv).join(',')).join('\n')],{type:'text/csv;charset=utf-8'}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='academiq_social_comments.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
+</script>
+</body>
+</html>
