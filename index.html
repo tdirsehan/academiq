@@ -2,201 +2,123 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha384-0fY1X16srOsR3nOsgtwAGFZN5hBzITBqSPn3hOG0fLmsX2eQVwKRcLoKLn2Kc/90'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src https://tdirsehan.github.io/academiq/title2doi/ https://tdirsehan.github.io/academic-prompt-generator/ https://tdirsehan.github.io/academiq/data2analysis/ https://tdirsehan.github.io/abstract2keywords/ https://tdirsehan.github.io/abstract2title/ https://tdirsehan.github.io/abstract2journal/ https://tdirsehan.github.io/abstract2coverletter/ https://tdirsehan.github.io/review-splitter/; worker-src 'none'; manifest-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha384-xBREiRIDrTyrL+tH3K+RX/Uhf9rwKCKAIERdHvKS6wDCmuRp7uPa1tJ5r9zTHKDA'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src https://tdirsehan.github.io/academiq/title2doi/ https://tdirsehan.github.io/academiq/title2doi/ https://tdirsehan.github.io/academic-prompt-generator/ https://tdirsehan.github.io/academiq/data2analysis/ https://tdirsehan.github.io/abstract2keywords/ https://tdirsehan.github.io/abstract2title/ https://tdirsehan.github.io/abstract2journal/ https://tdirsehan.github.io/abstract2coverletter/ https://tdirsehan.github.io/review-splitter/; worker-src 'none'; manifest-src 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffffff">
-<meta name="description" content="AcademIQ Tools: eight free, browser-based academic tools supporting the research-to-publication workflow.">
-<title>AcademIQ Tools</title>
-<link rel="stylesheet" href="styles.css?v=588e1f35d21f85cd" integrity="sha384-WI4fNdIfhc1s1F55rTke4al1I2qr24Z7Zb7CSZwaspmqPOIheypsh8benuQp96Qy">
-<style>
-.research-journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
-.journey-card{position:relative;display:flex;flex-direction:column;min-height:170px;padding:20px 18px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 8px 24px rgba(15,23,42,.04)}
-.journey-number{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--blue-soft);color:var(--blue);font-size:10px;font-weight:900;margin-bottom:16px}
-.journey-card h3{font-size:16px;line-height:1.25;letter-spacing:-.02em;margin:0 0 8px}
-.journey-card p{margin:0 0 18px;color:var(--muted);font-size:11px;line-height:1.5}
-.journey-tool{display:inline-flex;align-items:center;width:max-content;max-width:100%;margin-top:auto;padding:8px 10px;border-radius:10px;background:var(--navy);color:#fff;text-decoration:none;font-size:10px;font-weight:850;line-height:1.25}
-.journey-tool:hover{background:var(--blue)}
-.journey-card.manual .journey-number{background:#f1f5f9;color:#64748b}
-.journey-card.manual .journey-tool{background:#f8fafc;color:#64748b;border:1px solid var(--line);cursor:default}
-.journey-caption{margin-top:18px;color:var(--muted);font-size:12px;line-height:1.55}
-.support-note{margin:14px 0 0;color:rgba(255,255,255,.72);font-size:12px;line-height:1.6}
-.open-badge{display:inline-flex;align-items:center;gap:7px;margin-top:14px;padding:7px 10px;border:1px solid #cfe0f4;border-radius:999px;background:#f6fbff;color:#24527a;font-size:11px;font-weight:800}
-@media(max-width:980px){.research-journey-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.research-journey-grid{grid-template-columns:1fr}.journey-card{min-height:auto}}
-
-#donate{scroll-margin-top:100px}
-.donation-details{margin-top:28px;padding:28px;border:1px solid var(--line);border-radius:18px;background:#fff;color:var(--navy)}
-.donation-details h3{margin:0 0 10px;font-size:24px}
-.donation-details p{font-size:16px;line-height:1.6;color:var(--muted)}
-.donation-details dl{display:grid;grid-template-columns:minmax(120px,180px) minmax(0,1fr);gap:16px 24px;margin:24px 0 0;font-size:16px;line-height:1.6}
-.donation-details dt{font-weight:700}.donation-details dd{margin:0;overflow-wrap:anywhere}
-.donation-details .iban{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:clamp(16px,2.5vw,21px);letter-spacing:.02em;user-select:all}
-@media(max-width:620px){.donation-details{padding:22px 18px}.donation-details dl{grid-template-columns:1fr;gap:4px}.donation-details dd{margin-bottom:14px}}
-</style>
+<meta name="theme-color" content="#0f172a">
+<meta name="description" content="AcademIQ: eight free research tools for finding articles, analysing data, preparing manuscripts and organising reviewer responses.">
+<title>AcademIQ · Research tools, connected.</title>
+<link rel="icon" href="assets/academiq-icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css?v=e1211785f769d5a1" integrity="sha384-4SEXhfdp1aG67pDzDBqXiV5KecsuWuJD4J4kTD/HsYziCytNsUmkl/EzjHIbpJAQ">
+<script src="app.js?v=c41444891203ad3c" defer integrity="sha384-xBREiRIDrTyrL+tH3K+RX/Uhf9rwKCKAIERdHvKS6wDCmuRp7uPa1tJ5r9zTHKDA"></script>
 </head>
 <body>
+<a class="skip-link" href="#tools">Skip to the tools</a>
 <header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="#top" aria-label="AcademIQ Tools home">
-      <span class="brand-mark">IQ</span>
-      <span>AcademIQ Tools</span>
-    </a>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#tools">Tools</a>
-      <a href="#workflow">Workflow</a>
-      <a href="#support">About</a>
-      <a class="nav-button" href="#donate">Donate</a>
-    </nav>
-  </div>
+ <div class="container nav">
+  <a class="brand" href="#top" aria-label="AcademIQ home"><img class="brand-logo" src="assets/academiq-logo.png" width="2172" height="724" alt="AcademIQ"></a>
+  <nav class="nav-links" id="primaryNav" aria-label="Primary navigation"><a href="#tools">The toolkit</a><a href="#workflow">Research journey</a><a href="#support">About</a><a href="#donate">Support the project</a></nav>
+  <a class="nav-cta" href="#tools">Explore tools <span aria-hidden="true">↗</span></a>
+  <button id="menuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation"><span></span><span></span></button>
+ </div>
 </header>
-
 <main id="top">
 <section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <div class="eyebrow">Free academic research tools</div>
-      <h1>Eight practical tools for the research journey.</h1>
-      <p class="hero-text">From finding research articles, framing an academic task and analysing research data to manuscript positioning, journal targeting, submission, and reviewer response — AcademIQ is freely available to everyone.</p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="#tools">Open the tools</a>
-        <a class="button button-secondary" href="#donate">Donate</a>
-      </div>
-      <div class="hero-meta">
-        <span>8 focused tools</span>
-        <span>Free to use</span>
-        <span>No subscription</span>
-      </div>
-      <div class="open-badge">Open access · Optional donations only</div>
-    </div>
-
-    <div class="hero-card" aria-label="Research workflow summary">
-      <div class="hero-card-top">
-        <span class="status-dot"></span>
-        <span>Research-to-publication workflow</span>
-      </div>
-      <div class="mini-flow">
-        <div class="mini-step"><span>01</span><div><strong>Article Access</strong><small>Find a DOI and reach the article</small></div></div>
-        <div class="mini-step"><span>02</span><div><strong>Prompt</strong><small>Frame the research task</small></div></div>
-        <div class="mini-step"><span>03</span><div><strong>Data Analysis</strong><small>Diagnose data and run suitable analyses</small></div></div>
-        <div class="mini-step"><span>04</span><div><strong>Keywords & Title</strong><small>Position the research</small></div></div>
-        <div class="mini-step"><span>05</span><div><strong>Journal</strong><small>Identify relevant outlets</small></div></div>
-        <div class="mini-step"><span>06</span><div><strong>Cover Letter</strong><small>Prepare the submission</small></div></div>
-        <div class="mini-step"><span>07</span><div><strong>Review Response</strong><small>Structure revisions</small></div></div>
-      </div>
-    </div>
+ <div class="container hero-grid">
+  <div class="hero-copy"><div class="eyebrow"><span></span> THE ACADEMIQ TOOLKIT</div><h1>A clearer path<br>from research<br>to <em>publication.</em></h1><p class="hero-text">Eight practical tools for the research journey. Find sources, analyse data, prepare your manuscript, and organise reviewer responses.</p><div class="hero-actions"><a class="button button-primary" href="#tools">Find your tool <span aria-hidden="true">↗</span></a><a class="hero-secondary" href="#workflow">See the research journey <span aria-hidden="true">→</span></a></div><p class="hero-note"><span class="check-dot" aria-hidden="true">✓</span> Free to use. No subscription. Optional donations.</p></div>
+  <div class="workspace-visual" aria-label="An overview of the AcademIQ research toolkit">
+   <div class="workspace-caption"><span>YOUR RESEARCH WORKSPACE</span><span class="workspace-count">08 TOOLS</span></div>
+   <div class="workspace-symbol" aria-hidden="true"><img src="assets/academiq-logo.png" width="2172" height="724" alt=""></div>
+   <div class="workspace-path"><div><span>01</span><p>Find &amp; frame<small>Sources. Questions. Direction.</small></p><span class="path-check" aria-hidden="true">✓</span></div><div><span>02</span><p>Analyse &amp; develop<small>Data. Methods. Manuscripts.</small></p><span class="path-check" aria-hidden="true">✓</span></div><div><span>03</span><p>Submit &amp; revise<small>Journals. Letters. Responses.</small></p><span class="path-check" aria-hidden="true">✓</span></div></div>
+   <div class="spotlight"><div><span class="spotlight-label">START WITH A SOURCE</span><h2>Title2DOI</h2><p>From an article title to its DOI and access link.</p></div><button data-demo-name="Title2DOI" data-demo-url="https://tdirsehan.github.io/academiq/title2doi/" aria-label="Open Title2DOI"><span aria-hidden="true">↗</span></button></div>
+   <div class="workspace-foot"><span class="status-dot"></span> Independent modules. One research journey.</div>
   </div>
+ </div>
+ <div class="container hero-baseline"><span>Made for the work behind the paper.</span><div><span>Literature research</span><span>Data analysis</span><span>Academic writing</span><span>Publication</span></div></div>
 </section>
-
-<section class="section" id="tools">
-  <div class="container">
-    <div class="section-heading">
-      <span class="section-kicker">Open access tools</span>
-      <h2>Choose the tool you need.</h2>
-      <p>All eight modules are freely available. Use a tool inside AcademIQ or open it directly in a new tab — no licence, subscription, or payment is required.</p>
-    </div>
-
-    <div class="tool-grid">
-      <article class="tool-card">
-        <div class="tool-head"><div class="tool-icon">doi</div><span class="tool-stage">Literature research</span></div>
-        <h3>Title2DOI</h3>
+<section class="section tools-section" id="tools">
+ <div class="container">
+  <div class="section-top"><div><span class="section-kicker">THE TOOLKIT / 01</span><h2>The right tool.<br>The right stage.</h2></div><p>Open a focused tool when you need it.<br>Use it here, or in a separate tab.</p></div>
+  <div class="tool-controls"><div class="filter-list" role="group" aria-label="Filter tools by research stage"><button type="button" class="filter active" data-filter="all" aria-pressed="true">All tools <span>8</span></button><button type="button" class="filter" data-filter="research" aria-pressed="false">Research</button><button type="button" class="filter" data-filter="analysis" aria-pressed="false">Analysis</button><button type="button" class="filter" data-filter="writing" aria-pressed="false">Writing</button><button type="button" class="filter" data-filter="publication" aria-pressed="false">Submission &amp; revision</button></div><label class="tool-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="toolSearch" type="search" placeholder="Search the toolkit" aria-label="Search the toolkit" maxlength="150" autocomplete="off"></label></div>
+  <div class="catalogue-caption"><span id="toolCount" role="status" aria-live="polite">8 tools for your research</span><span>Free access to every module</span></div>
+  <div class="tool-grid"><article class="tool-card" data-category="research">
+        <div class="tool-head"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 13 4-4M8 16l-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0M16 8l1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/></svg></div><span class="tool-stage">Literature research</span></div>
+        <span class="tool-index">01 / 08</span><h3>Title2DOI</h3>
         <p>Find an article’s DOI and publisher link from its title. Compare authors, publication year, and journal details before selecting a record.</p>
         <div class="tool-tags"><span>DOI lookup</span><span>Article access</span></div>
         <div class="tool-actions">
-          <button class="tool-primary" data-demo-name="Title2DOI" data-demo-url="https://tdirsehan.github.io/academiq/title2doi/">Open here</button>
-          <a href="https://tdirsehan.github.io/academiq/title2doi/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+          <button class="tool-primary" data-demo-name="Title2DOI" data-demo-url="https://tdirsehan.github.io/academiq/title2doi/">Open tool <span aria-hidden="true">↗</span></button>
+          <a href="https://tdirsehan.github.io/academiq/title2doi/" target="_blank" rel="noopener noreferrer" aria-label="Open Title2DOI in a new tab" title="Open in new tab">↗</a>
         </div>
-      </article>
-
-      <article class="tool-card">
-        <div class="tool-head"><div class="tool-icon">⌘</div><span class="tool-stage">Research planning</span></div>
-        <h3>Academic Prompt Generator</h3>
+      </article><article class="tool-card" data-category="research">
+        <div class="tool-head"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-6 4V6a2 2 0 0 1 2-2Z"/><path d="M7 9h10M7 13h6"/></svg></div><span class="tool-stage">Research planning</span></div>
+        <span class="tool-index">02 / 08</span><h3>Academic Prompt Generator</h3>
         <p>Build structured academic AI prompts with evidence rules, constraints, output format, and quality controls.</p>
         <div class="tool-tags"><span>Prompt quality</span><span>Research templates</span></div>
         <div class="tool-actions">
-          <button class="tool-primary" data-demo-name="Academic Prompt Generator" data-demo-url="https://tdirsehan.github.io/academic-prompt-generator/">Open here</button>
-          <a href="https://tdirsehan.github.io/academic-prompt-generator/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+          <button class="tool-primary" data-demo-name="Academic Prompt Generator" data-demo-url="https://tdirsehan.github.io/academic-prompt-generator/">Open tool <span aria-hidden="true">↗</span></button>
+          <a href="https://tdirsehan.github.io/academic-prompt-generator/" target="_blank" rel="noopener noreferrer" aria-label="Open Academic Prompt Generator in a new tab" title="Open in new tab">↗</a>
         </div>
-      </article>
-
-      <article class="tool-card">
-        <div class="tool-head"><div class="tool-icon">Σ</div><span class="tool-stage">Data analysis</span></div>
-        <h3>Data2Analysis</h3>
+      </article><article class="tool-card" data-category="analysis">
+        <div class="tool-head"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h17M8 15v-4M13 15V7M18 15v-8"/></svg></div><span class="tool-stage">Data analysis</span></div>
+        <span class="tool-index">03 / 08</span><h3>Data2Analysis</h3>
         <p>Classify uploaded data as qualitative, quantitative, or mixed; recommend suitable methods and run supported analyses in the browser.</p>
         <div class="tool-tags"><span>Method recommendation</span><span>Statistical analysis</span></div>
         <div class="tool-actions">
-          <button class="tool-primary" data-demo-name="Data2Analysis" data-demo-url="https://tdirsehan.github.io/academiq/data2analysis/">Open here</button>
-          <a href="https://tdirsehan.github.io/academiq/data2analysis/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+          <button class="tool-primary" data-demo-name="Data2Analysis" data-demo-url="https://tdirsehan.github.io/academiq/data2analysis/">Open tool <span aria-hidden="true">↗</span></button>
+          <a href="https://tdirsehan.github.io/academiq/data2analysis/" target="_blank" rel="noopener noreferrer" aria-label="Open Data2Analysis in a new tab" title="Open in new tab">↗</a>
         </div>
-      </article>
-
-      <article class="tool-card">
-        <div class="tool-head"><div class="tool-icon">#</div><span class="tool-stage">Research communication</span></div>
-        <h3>Abstract2Keywords</h3>
+      </article><article class="tool-card" data-category="writing">
+        <div class="tool-head"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 3-3 18M18 3l-3 18M3 9h18M2 15h18"/></svg></div><span class="tool-stage">Research communication</span></div>
+        <span class="tool-index">04 / 08</span><h3>Abstract2Keywords</h3>
         <p>Generate publication-oriented keywords and structure unstructured abstracts into standard academic sections.</p>
         <div class="tool-tags"><span>1–10 keywords</span><span>Abstract structure</span></div>
         <div class="tool-actions">
-          <button class="tool-primary" data-demo-name="Abstract2Keywords" data-demo-url="https://tdirsehan.github.io/abstract2keywords/">Open here</button>
-          <a href="https://tdirsehan.github.io/abstract2keywords/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+          <button class="tool-primary" data-demo-name="Abstract2Keywords" data-demo-url="https://tdirsehan.github.io/abstract2keywords/">Open tool <span aria-hidden="true">↗</span></button>
+          <a href="https://tdirsehan.github.io/abstract2keywords/" target="_blank" rel="noopener noreferrer" aria-label="Open Abstract2Keywords in a new tab" title="Open in new tab">↗</a>
         </div>
-      </article>
-
-      <article class="tool-card">
-        <div class="tool-head"><div class="tool-icon">T</div><span class="tool-stage">Positioning</span></div>
-        <h3>Abstract2Title</h3>
+      </article><article class="tool-card" data-category="writing">
+        <div class="tool-head"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16M12 5v15M8 20h8M4 5v3M20 5v3"/></svg></div><span class="tool-stage">Positioning</span></div>
+        <span class="tool-index">05 / 08</span><h3>Abstract2Title</h3>
         <p>Generate and compare three publication-ready title alternatives with a structured Title Fit evaluation.</p>
         <div class="tool-tags"><span>3 title strategies</span><span>Fit score</span></div>
         <div class="tool-actions">
-          <button class="tool-primary" data-demo-name="Abstract2Title" data-demo-url="https://tdirsehan.github.io/abstract2title/">Open here</button>
-          <a href="https://tdirsehan.github.io/abstract2title/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+          <button class="tool-primary" data-demo-name="Abstract2Title" data-demo-url="https://tdirsehan.github.io/abstract2title/">Open tool <span aria-hidden="true">↗</span></button>
+          <a href="https://tdirsehan.github.io/abstract2title/" target="_blank" rel="noopener noreferrer" aria-label="Open Abstract2Title in a new tab" title="Open in new tab">↗</a>
         </div>
-      </article>
-
-      <article class="tool-card">
-        <div class="tool-head"><div class="tool-icon">◎</div><span class="tool-stage">Dissemination</span></div>
-        <h3>Abstract2Journal</h3>
+      </article><article class="tool-card" data-category="publication">
+        <div class="tool-head"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="m15 9 6-6"/></svg></div><span class="tool-stage">Dissemination</span></div>
+        <span class="tool-index">06 / 08</span><h3>Abstract2Journal</h3>
         <p>Match abstracts with journals using publication evidence, topic overlap, similar articles, and OpenAlex data.</p>
         <div class="tool-tags"><span>Journal Fit</span><span>Real articles</span></div>
         <div class="tool-actions">
-          <button class="tool-primary" data-demo-name="Abstract2Journal" data-demo-url="https://tdirsehan.github.io/abstract2journal/">Open here</button>
-          <a href="https://tdirsehan.github.io/abstract2journal/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+          <button class="tool-primary" data-demo-name="Abstract2Journal" data-demo-url="https://tdirsehan.github.io/abstract2journal/">Open tool <span aria-hidden="true">↗</span></button>
+          <a href="https://tdirsehan.github.io/abstract2journal/" target="_blank" rel="noopener noreferrer" aria-label="Open Abstract2Journal in a new tab" title="Open in new tab">↗</a>
         </div>
-      </article>
-
-      <article class="tool-card">
-        <div class="tool-head"><div class="tool-icon">✉</div><span class="tool-stage">Submission</span></div>
-        <h3>Abstract2CoverLetter</h3>
+      </article><article class="tool-card" data-category="publication">
+        <div class="tool-head"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><span class="tool-stage">Submission</span></div>
+        <span class="tool-index">07 / 08</span><h3>Abstract2CoverLetter</h3>
         <p>Draft a journal-ready cover letter with aims-and-scope fit, quality checks, and optional submission statements.</p>
         <div class="tool-tags"><span>Scope fit</span><span>Claim checks</span></div>
         <div class="tool-actions">
-          <button class="tool-primary" data-demo-name="Abstract2CoverLetter" data-demo-url="https://tdirsehan.github.io/abstract2coverletter/">Open here</button>
-          <a href="https://tdirsehan.github.io/abstract2coverletter/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+          <button class="tool-primary" data-demo-name="Abstract2CoverLetter" data-demo-url="https://tdirsehan.github.io/abstract2coverletter/">Open tool <span aria-hidden="true">↗</span></button>
+          <a href="https://tdirsehan.github.io/abstract2coverletter/" target="_blank" rel="noopener noreferrer" aria-label="Open Abstract2CoverLetter in a new tab" title="Open in new tab">↗</a>
         </div>
-      </article>
-
-      <article class="tool-card">
-        <div class="tool-head"><div class="tool-icon">↳</div><span class="tool-stage">Revision</span></div>
-        <h3>Review Splitter</h3>
+      </article><article class="tool-card" data-category="publication">
+        <div class="tool-head"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5h13M8 12h13M8 19h13M2 5l1 1 2-2M2 12l1 1 2-2M2 19l1 1 2-2"/></svg></div><span class="tool-stage">Revision</span></div>
+        <span class="tool-index">08 / 08</span><h3>Review Splitter</h3>
         <p>Turn reviewer comments into structured R1.1, R1.2, and R2.1 items with editable point-by-point response starters.</p>
         <div class="tool-tags"><span>Comment splitting</span><span>Response drafting</span></div>
         <div class="tool-actions">
-          <button class="tool-primary" data-demo-name="Review Splitter" data-demo-url="https://tdirsehan.github.io/review-splitter/">Open here</button>
-          <a href="https://tdirsehan.github.io/review-splitter/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+          <button class="tool-primary" data-demo-name="Review Splitter" data-demo-url="https://tdirsehan.github.io/review-splitter/">Open tool <span aria-hidden="true">↗</span></button>
+          <a href="https://tdirsehan.github.io/review-splitter/" target="_blank" rel="noopener noreferrer" aria-label="Open Review Splitter in a new tab" title="Open in new tab">↗</a>
         </div>
-      </article>
-    </div>
-  </div>
+      </article></div>
+  <div class="no-results" id="noTools" hidden><h3>No tools match this search.</h3><p>Try another term or reset the filters.</p><button id="resetTools" type="button">Show all tools →</button></div>
+  <noscript><p class="journey-caption">Open a tool with its new-tab link. Search, filters and the embedded launcher require JavaScript.</p></noscript>
+ </div>
 </section>
-
-<section class="section section-soft" id="workflow">
-  <div class="container">
-    <div class="section-heading compact">
-      <span class="section-kicker">Research Journey</span>
-      <h2>From research idea to peer-review revision.</h2>
-      <p>Each AcademIQ module can be used independently or as part of an integrated research-to-publication workflow.</p>
-    </div>
-
-    <div class="research-journey-grid">
+<section class="section section-soft" id="workflow"><div class="container"><div class="section-top"><div><span class="section-kicker">RESEARCH JOURNEY / 02</span><h2>From the first question<br>to the next revision.</h2></div><p>A map of the work, not a fixed sequence.<br>Choose the step that matches your task.</p></div><div class="research-journey-grid">
       <article class="journey-card manual"><span class="journey-number">01</span><h3>Research Idea</h3><p>Develop the initial research idea, problem, and direction.</p><span class="journey-tool">Manual</span></article>
       <article class="journey-card"><span class="journey-number">02</span><h3>Literature Review</h3><p>Find article DOIs and access links with Title2DOI, then read, evaluate, and synthesize the literature.</p><a class="journey-tool" href="https://tdirsehan.github.io/academiq/title2doi/" target="_blank" rel="noopener noreferrer">Title2DOI ↗</a></article>
       <article class="journey-card"><span class="journey-number">03</span><h3>Research Framing</h3><p>Structure the research task and create a rigorous academic AI prompt.</p><a class="journey-tool" href="https://tdirsehan.github.io/academic-prompt-generator/" target="_blank" rel="noopener noreferrer">Academic Prompt Generator ↗</a></article>
@@ -206,95 +128,16 @@
       <article class="journey-card"><span class="journey-number">07</span><h3>Journal Selection</h3><p>Identify relevant journals and evidence-based publication matches.</p><a class="journey-tool" href="https://tdirsehan.github.io/abstract2journal/" target="_blank" rel="noopener noreferrer">Abstract2Journal ↗</a></article>
       <article class="journey-card"><span class="journey-number">08</span><h3>Submission</h3><p>Prepare a journal-focused cover letter for manuscript submission.</p><a class="journey-tool" href="https://tdirsehan.github.io/abstract2coverletter/" target="_blank" rel="noopener noreferrer">Abstract2CoverLetter ↗</a></article>
       <article class="journey-card"><span class="journey-number">09</span><h3>Peer Review & Revision</h3><p>Split reviewer comments and prepare structured point-by-point responses.</p><a class="journey-tool" href="https://tdirsehan.github.io/review-splitter/" target="_blank" rel="noopener noreferrer">Review Splitter ↗</a></article>
-    </div>
-
-    <p class="journey-caption">AcademIQ complements scholarly judgement: the researcher remains responsible for literature evaluation, methodological decisions, assumptions, source verification, and final academic content.</p>
-  </div>
-</section>
-
-<section class="section" id="support">
-  <div class="container">
-    <div class="institution-card">
-      <div class="institution-copy">
-        <span class="section-kicker light">Community supported</span>
-        <h2>Use AcademIQ freely. Support it if you find it useful.</h2>
-        <p>There is no paywall, subscription, institutional licence, or required fee. Donations are entirely optional and help support maintenance and further development.</p>
-        <p class="support-note">A donation does not unlock extra access: every AcademIQ tool remains available to everyone.</p>
-      </div>
-      <div class="institution-side">
-        <div class="institution-list">
-          <div>Free access to all eight tools</div>
-          <div>No account required on the AcademIQ landing page</div>
-          <div>No subscription or institutional licence</div>
-          <div>Optional community support</div>
-        </div>
-        <a class="button button-white" href="#donate">Donate ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-soft" id="donate" aria-labelledby="donation-heading">
-  <div class="container">
-    <div class="donation-details">
-      <h3 id="donation-heading">Donate by Bank Transfer</h3>
-      <p>If you would like to support AcademIQ, you can make a voluntary bank transfer using the details below.</p>
-      <dl>
+    </div><p class="journey-caption">AcademIQ complements scholarly judgement. Literature evaluation, methodological decisions, assumptions, source verification, and final academic content remain the researcher’s responsibility.</p></div></section>
+<section class="section about-section" id="support"><div class="container"><div class="about-grid"><div class="about-copy"><span class="section-kicker">ABOUT ACADEMIQ / 03</span><h2>Built around<br>research work.</h2><p>AcademIQ brings together small, focused tools for the tasks that sit between a research idea and a submitted paper.</p><p>Developed by Prof. Dr. Taşkın Dirsehan. Each module can be used independently, without a subscription or institutional licence.</p><a class="inline-link" href="https://github.com/tdirsehan/academiq" target="_blank" rel="noopener noreferrer">Explore the project on GitHub <span aria-hidden="true">↗</span></a></div><div class="principle-list"><article><span>01</span><div><h3>One task at a time</h3><p>Each module has a defined input, output, and place in the research process.</p></div></article><article><span>02</span><div><h3>Access without a subscription</h3><p>All eight tools are free to use. Donations are optional and do not unlock extra features.</p></div></article><article><span>03</span><div><h3>Keep judgement in the loop</h3><p>Results support your decisions. Check evidence, assumptions, source details, and the final output.</p></div></article></div></div></div></section>
+<section class="donate-section" id="donate" aria-labelledby="donation-heading"><div class="container"><div class="support-banner"><div><span class="section-kicker light">COMMUNITY SUPPORTED</span><h2 id="donation-heading">Useful to your research?<br>Help keep it available.</h2><p>Donations support maintenance and further development. Every tool remains freely available to everyone.</p></div><div class="support-actions"><a class="button button-white" href="https://github.com/sponsors/tdirsehan" target="_blank" rel="noopener noreferrer">Support on GitHub <span aria-hidden="true">↗</span></a><a class="bank-link" href="#bankDetails">Bank transfer details ↓</a></div></div><details class="donation-details" id="bankDetails"><summary>Donate by bank transfer <span aria-hidden="true">+</span></summary><div><p>If you choose to support AcademIQ by bank transfer, the existing account details are below.</p><dl>
         <dt>Account Holder</dt><dd>Taşkın Dirsehan</dd>
         <dt>Bank Name</dt><dd>Yapı Kredi</dd>
         <dt>Branch Name</dt><dd>Bahçelievler Branch</dd>
         <dt>IBAN</dt><dd class="iban">TR25 0006 7010 0000 0011 9976 75</dd>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-heading compact">
-      <span class="section-kicker">Why AcademIQ</span>
-      <h2>Open, focused, and practical.</h2>
-    </div>
-    <div class="benefit-grid">
-      <div class="benefit"><span>01</span><h3>Focused</h3><p>Each module supports one clearly defined academic task.</p></div>
-      <div class="benefit"><span>02</span><h3>Low-friction</h3><p>The tools run in the browser without requiring a commercial subscription.</p></div>
-      <div class="benefit"><span>03</span><h3>Open access</h3><p>Everyone can use the same tools; donations are voluntary and never gate functionality.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section small-section section-soft">
-  <div class="container reassurance-grid">
-    <div><strong>Responsible use</strong><p>AcademIQ Tools supports academic work but does not replace scholarly judgement, source verification, peer review, or editorial decisions.</p></div>
-    <div><strong>Decision-support outputs</strong><p>Prompt Quality, Title Fit, Journal Fit, statistical results, and related outputs are decision-support indicators — not guarantees of publication, causality, or methodological adequacy.</p></div>
-  </div>
-</section>
+      </dl></div></details></div></section>
+<section class="responsible-note"><div class="container"><span class="note-icon" aria-hidden="true">i</span><p>AcademIQ supports academic work; it does not replace scholarly judgement, peer review, or editorial decisions. Prompt Quality, Title Fit, Journal Fit, and statistical outputs are decision-support indicators, not guarantees of publication, causality, or methodological adequacy.</p></div></section>
 </main>
-
-<footer class="footer">
-  <div class="container footer-row">
-    <div><strong>AcademIQ Tools</strong><span>Free academic tools for the research-to-publication journey.</span></div>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="#donate">Donate</a>
-      <a href="https://github.com/tdirsehan" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </div>
-  </div>
-</footer>
-
-<div class="demo-modal" id="demoModal" aria-hidden="true">
-  <div class="demo-shell">
-    <div class="demo-bar">
-      <div id="demoTitle">AcademIQ Tool</div>
-      <div class="demo-bar-actions">
-        <a id="fullDemo" href="#" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
-        <button id="closeDemoButton">Close</button>
-      </div>
-    </div>
-    <iframe class="demo-frame" id="demoFrame" title="AcademIQ Tool" src="about:blank"></iframe>
-  </div>
-</div>
-<script src="app.js?v=d1f6355f5eacaceb" integrity="sha384-0fY1X16srOsR3nOsgtwAGFZN5hBzITBqSPn3hOG0fLmsX2eQVwKRcLoKLn2Kc/90"></script>
-</body>
-</html>
+<footer class="footer"><div class="container footer-row"><div><a class="brand" href="#top" aria-label="AcademIQ home"><img class="brand-logo" src="assets/academiq-logo.png" width="2172" height="724" loading="lazy" alt="AcademIQ"></a><p>Tools for the work behind the paper.</p></div><div class="footer-links"><a href="#tools">The toolkit</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="https://github.com/tdirsehan" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div><span class="footer-signature">Research tools, connected.</span></div></footer>
+<div class="demo-modal" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="demoTitle" aria-hidden="true"><div class="demo-shell"><div class="demo-bar"><div id="demoTitle">AcademIQ Tool</div><div class="demo-bar-actions"><a id="fullDemo" href="#" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a><button id="closeDemoButton" type="button">Close <span aria-hidden="true">×</span></button></div></div><iframe class="demo-frame" id="demoFrame" title="AcademIQ Tool" src="about:blank"></iframe></div></div>
+</body></html>

@@ -86,3 +86,7 @@ The [Title2DOI module](title2doi/) finds DOI records and publisher links from ar
 Data2Analysis uses vendored SheetJS CE 0.20.3 and jStat 1.9.6. Imports run in a dedicated Worker and are limited to 5 MiB, 10,000 data rows and 100 columns, with a 10-second parsing timeout. Dataset contents stay in the browser. See [SECURITY.md](SECURITY.md) for additional text/archive limits, dependency provenance, browser protections and GitHub Pages header limitations.
 
 After changing scripts or styles, run `npm run security:refresh` and `npm test` before publishing so CSP and resource integrity hashes remain current.
+
+## Visual identity and catalogue
+
+The catalogue uses the AcademIQ navy/blue logo at `assets/academiq-logo.png`, with shared header display styles in `assets/brand.css`. The original transparent artwork is reused without raster edits. The homepage includes stage filters, a local text search, mobile navigation, and direct/embedded access to all eight tools. Search terms remain in the browser. Data2Analysis, Title2DOI and the information pages share the updated logo. Separately hosted module repositories retain their own interfaces.
