@@ -94,3 +94,8 @@ The catalogue uses the AcademIQ navy/blue logo at `assets/academiq-logo.png`, wi
 ## Interface language
 
 The module interfaces use English, including Title2DOI messages and both Social Analyzer routes. Search results, author names, supplied research text and user comments retain their original language. Multilingual matching and analysis dictionaries are preserved. Language checks run with `npm test`.
+
+
+## Research Question Builder
+
+Open `research-question-builder/` to define a research problem and select 1–10 questions. The module prepares an English prompt for ChatGPT with sequential RQ1:, RQ2: labels, optional context, population and method constraints. It does not call an AI API or save entered data. Illustrative questions are explicitly labelled.

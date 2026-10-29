@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 test('English UI markup and Title2DOI messages contain no untranslated Turkish copy',()=>{
- for(const path of ['title2doi/index.html','social-analyzer.html','social-analyzer/index.html']){
+ for(const path of ['research-question-builder/index.html','title2doi/index.html','social-analyzer.html','social-analyzer/index.html']){
   const html=read(path);assert.match(html,/<html lang="en">/);
   const visible=html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi,'');
   assert.doesNotMatch(visible,/[çÇğĞıİöÖşŞüÜ]/,path);

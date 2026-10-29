@@ -5,6 +5,7 @@ const fullDemo=document.getElementById('fullDemo');
 let returnFocus=null;
 
 const allowedModules=new Map([
+  ['https://tdirsehan.github.io/academiq/research-question-builder/','Research Question Builder'],
   ['https://tdirsehan.github.io/academiq/title2doi/','Title2DOI'],
   ['https://tdirsehan.github.io/academic-prompt-generator/','Academic Prompt Generator'],
   ['https://tdirsehan.github.io/academiq/data2analysis/','Data2Analysis'],
@@ -69,7 +70,7 @@ function filterTools(){
     const matches=(selectedStage==='all'||card.dataset.category===selectedStage)&&card.textContent.toLocaleLowerCase().includes(term);
     card.hidden=!matches;if(matches)visible++;
   }
-  const count=document.getElementById('toolCount');if(count)count.textContent=visible===8?'8 tools for your research':visible+' of 8 tools';
+  const count=document.getElementById('toolCount');if(count)count.textContent=visible===toolCards.length?toolCards.length+' tools for your research':visible+' of '+toolCards.length+' tools';
   const empty=document.getElementById('noTools');if(empty)empty.hidden=visible>0;
   for(const button of filterButtons){const active=button.dataset.filter===selectedStage;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));}
 }
