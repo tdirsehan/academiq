@@ -270,9 +270,10 @@
         const ti=lastThematicResult.themes.findIndex(t=>t.codes.includes(c));
         lines.push([c.label,c.kind,c.docs.size,c.mentions,themeName(ti)]);
       });
-      const csv=lines.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+      const csv=lines.map(r=>r.map(safeCsvCell).join(',')).join('\n');
       const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});
       const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Data2Analysis_thematic_codebook.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
     });
   }
 })();
+

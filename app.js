@@ -3,7 +3,18 @@ const frame=document.getElementById('demoFrame');
 const modalTitle=document.getElementById('demoTitle');
 const fullDemo=document.getElementById('fullDemo');
 
+const allowedModules=new Map([
+  ['https://tdirsehan.github.io/academic-prompt-generator/','Academic Prompt Generator'],
+  ['https://tdirsehan.github.io/academiq/data2analysis/','Data2Analysis'],
+  ['https://tdirsehan.github.io/abstract2keywords/','Abstract2Keywords'],
+  ['https://tdirsehan.github.io/abstract2title/','Abstract2Title'],
+  ['https://tdirsehan.github.io/abstract2journal/','Abstract2Journal'],
+  ['https://tdirsehan.github.io/abstract2coverletter/','Abstract2CoverLetter'],
+  ['https://tdirsehan.github.io/review-splitter/','Review Splitter']
+]);
 function openDemo(name,url){
+  if(!allowedModules.has(url))return;
+  name=allowedModules.get(url);
   modalTitle.textContent=name;
   fullDemo.href=url;
   frame.src=url;
@@ -37,3 +48,6 @@ document.addEventListener('keydown',e=>{
 
 window.openDemo=openDemo;
 window.closeDemo=closeDemo;
+
+
+document.getElementById('closeDemoButton')?.addEventListener('click',closeDemo);

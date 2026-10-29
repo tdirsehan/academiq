@@ -1,0 +1,31 @@
+{
+  "retrieved": "2026-10-29",
+  "dependencies": [
+    {
+      "file": "xlsx-0.20.3.full.min.js",
+      "source": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+      "retrieval_mirror": "https://raw.githubusercontent.com/sheetxl/vendor-xlsx/main/xlsx-0.20.3.tgz",
+      "sha384": "127c98d3f1921d0192c5280cc1a20fcd21126eaa0e2d27b17e748c37600ffb7f429269fddacb700016729ead49cb3753",
+      "bytes": 951904
+    },
+    {
+      "file": "xlsx-LICENSE.txt",
+      "source": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+      "retrieval_mirror": "https://raw.githubusercontent.com/sheetxl/vendor-xlsx/main/xlsx-0.20.3.tgz",
+      "sha384": "df41bf006456108571f4cb737e3d653b7cee6cb9b34809303f3f07d045f03d8ae4fe45b7cc4bf6ea5671a91e6cf71ed2",
+      "bytes": 11355
+    },
+    {
+      "file": "jstat-1.9.6.min.js",
+      "source": "https://cdn.jsdelivr.net/npm/jstat@1.9.6/dist/jstat.min.js",
+      "sha384": "eee18e3212e18eba136a67ade65ebd3d1f041b1294c9666564e1450d1ca6b55a887ec8781e3eee65172d5baed909d903",
+      "bytes": 73407
+    },
+    {
+      "file": "jstat-LICENSE.txt",
+      "source": "https://cdn.jsdelivr.net/npm/jstat@1.9.6/LICENSE",
+      "sha384": "217971d53ea0cc2764464b7134b171c743f514e2235f53d78a3ce1585bd6b36137d6a195393e7ea5feb6664deab9e73d",
+      "bytes": 1049
+    }
+  ]
+}
