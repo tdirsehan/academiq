@@ -1,5 +1,5 @@
 'use strict';
-importScripts('import-limits.js','vendor/xlsx-0.20.3.full.min.js');
+importScripts('import-limits.js?v=33103f9056e99e17','vendor/xlsx-0.20.3.full.min.js');
 self.onmessage=function(event){
   try{
     const {name,buffer}=event.data||{};

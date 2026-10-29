@@ -105,7 +105,7 @@ async function loadFile(file){
   try{
     if(typeof Worker==='undefined')throw new Error('This browser does not support isolated file reading. Use a current browser.');
     const buffer=await file.arrayBuffer();if(activeImport!==job)return;
-    job.worker=new Worker(new URL('import-worker.js',document.baseURI));
+    job.worker=new Worker(new URL('import-worker.js?v=50382a743e166a4d',document.baseURI));
     job.timer=setTimeout(()=>{if(activeImport===job){cancelImport();$('fileStatus').textContent='Reading exceeded 10 seconds and was stopped. Use a smaller or simpler file.';}},IMPORT_LIMITS.timeoutMs);
     job.worker.onmessage=event=>{if(activeImport!==job)return;const result=event.data;cancelImport();try{if(!result||result.ok!==true)throw new Error(result?.error||'The file could not be parsed.');setRows(validateImportedRows(result.data),file.name);}catch(error){$('fileStatus').textContent=`Could not read file: ${error.message}`;}};
     job.worker.onerror=event=>{event.preventDefault();if(activeImport===job){cancelImport();$('fileStatus').textContent='The isolated file reader could not start. Reload the page and try again.';}};
