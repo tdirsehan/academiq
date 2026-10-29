@@ -1,6 +1,6 @@
 # AcademIQ Tools
 
-AcademIQ Tools is a portfolio of seven focused academic web applications developed by Prof. Dr. Taşkın Dirsehan to support the research-to-publication process from framing the academic task and analysing data to journal submission and reviewer response.
+AcademIQ Tools is a portfolio of eight focused academic web applications developed by Prof. Dr. Taşkın Dirsehan to support the research-to-publication process from finding articles, framing the academic task and analysing data to journal submission and reviewer response.
 
 ## Live website
 
@@ -29,11 +29,15 @@ https://tdirsehan.github.io/abstract2coverletter/
 7. Review Splitter  
 https://tdirsehan.github.io/review-splitter/
 
-All seven tools are freely accessible. There is no subscription, institutional licence, or required payment. The main website also provides an embedded launcher so tools can be used without first leaving the AcademIQ landing page, while each tool can also be opened directly in its own GitHub Pages application.
+8. Title2DOI  
+https://tdirsehan.github.io/academiq/title2doi/
+
+All eight tools are freely accessible. There is no subscription, institutional licence, or required payment. The main website also provides an embedded launcher so tools can be used without first leaving the AcademIQ landing page, while each tool can also be opened directly in its own GitHub Pages application. Publisher full text reached through Title2DOI may require payment or institutional access.
 
 ## Integrated research workflow
 
-Research task / prompt
+Title2DOI / article access
+→ Research task / prompt
 → Data2Analysis
 → Abstract2Keywords
 → Abstract2Title
@@ -65,7 +69,11 @@ AcademIQ Tools supports academic work but does not replace scholarly judgement, 
 
 Scores such as Prompt Quality, Title Fit, Journal Fit, Aims & Scope Fit, Cover Letter Quality, and statistical outputs are decision-support indicators rather than guarantees. Journal Fit is not an acceptance probability, and statistical significance does not by itself establish causality or methodological adequacy.
 
-Abstract2Journal uses OpenAlex to retrieve publication evidence. Other modules may operate locally in the browser as described in their interfaces.
+Abstract2Journal uses OpenAlex to retrieve publication evidence. Title2DOI sends submitted article titles, optional author surnames and publication years, or a DOI, directly from the browser to Crossref. It stores no persistent search history and shows title-similarity candidates rather than asserting that every result is the correct article. Other modules may operate locally in the browser as described in their interfaces.
+
+## Title2DOI
+
+The [Title2DOI module](title2doi/) finds DOI records and publisher links from article titles. Optional author and year fields narrow the search; DOI input retrieves its record directly. Results display title, authors, publication year, journal, DOI, and article links, with a copy-DOI action. See [module documentation](title2doi/README.md) for matching, coverage and network behavior.
 
 ## Legal / information pages
 

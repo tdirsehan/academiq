@@ -4,6 +4,7 @@ const modalTitle=document.getElementById('demoTitle');
 const fullDemo=document.getElementById('fullDemo');
 
 const allowedModules=new Map([
+  ['https://tdirsehan.github.io/academiq/title2doi/','Title2DOI'],
   ['https://tdirsehan.github.io/academic-prompt-generator/','Academic Prompt Generator'],
   ['https://tdirsehan.github.io/academiq/data2analysis/','Data2Analysis'],
   ['https://tdirsehan.github.io/abstract2keywords/','Abstract2Keywords'],

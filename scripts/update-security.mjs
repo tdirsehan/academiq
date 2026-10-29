@@ -9,6 +9,8 @@ const limitsPath=resolve(root,'data2analysis/import-limits.js'),workerPath=resol
 let worker=readFileSync(workerPath,'utf8').replace(/import-limits\.js(?:\?v=[a-f0-9]+)?/g,'import-limits.js?v='+version(readFileSync(limitsPath)));
 writeFileSync(workerPath,worker);
 writeFileSync(appPath,readFileSync(appPath,'utf8').replace(/import-worker\.js(?:\?v=[a-f0-9]+)?/g,'import-worker.js?v='+version(Buffer.from(worker))));
+const doiAppPath=resolve(root,'title2doi/app.js'),doiCorePath=resolve(root,'title2doi/core.mjs');
+writeFileSync(doiAppPath,readFileSync(doiAppPath,'utf8').replace(/\.\/core\.mjs(?:\?v=[a-f0-9]+)?/g,'./core.mjs?v='+version(readFileSync(doiCorePath))));
 function htmlFiles(directory){return readdirSync(directory,{withFileTypes:true}).flatMap(entry=>entry.name.startsWith('.')?[]:entry.isDirectory()?htmlFiles(resolve(directory,entry.name)):entry.name.endsWith('.html')?[resolve(directory,entry.name)]:[]);}
 for(const file of htmlFiles(root)){
   let html=readFileSync(file,'utf8');
@@ -20,8 +22,8 @@ for(const file of htmlFiles(root)){
     scriptHashes.push(hash(Buffer.from(body)));return full;
   });
   html=html.replace(/<link\b[^>]*rel="stylesheet"[^>]*>/gi,full=>{const href=full.match(/\bhref="([^"]+)"/i)?.[1],asset=href?.split('?')[0];if(!asset||/^https?:/i.test(asset))throw new Error('Unexpected stylesheet');const bytes=readFileSync(resolve(dirname(file),asset));return full.replace(/\bhref="[^"]+"/i,'href="'+asset+'?v='+version(bytes)+'"').replace(/\s+integrity="[^"]*"/i,'').replace(/>$/,` integrity="${hash(bytes)}">`);});
-  const isHome=file===resolve(root,'index.html'),social=file.endsWith('social-analyzer.html')||file.endsWith('social-analyzer/index.html');
-  const csp=["default-src 'none'",'script-src '+(scriptHashes.length?scriptHashes.map(h=>`'${h}'`).join(' '):"'none'"),"script-src-attr 'none'","style-src 'self' 'unsafe-inline'","img-src 'self' data:","font-src 'none'",social?'connect-src https://www.googleapis.com https://api.apify.com':"connect-src 'none'","object-src 'none'","base-uri 'none'","form-action 'none'",isHome?'frame-src '+[...html.matchAll(/data-demo-url="([^"]+)"/g)].map(m=>m[1]).join(' '):"frame-src 'none'",file.includes('/data2analysis/')?"worker-src 'self'":"worker-src 'none'","manifest-src 'none'"].join('; ');
+  const isHome=file===resolve(root,'index.html'),social=file.endsWith('social-analyzer.html')||file.endsWith('social-analyzer/index.html'),isDoi=file===resolve(root,'title2doi/index.html');
+  const csp=["default-src 'none'",'script-src '+(isDoi?"'self' ":'')+(scriptHashes.length?scriptHashes.map(h=>`'${h}'`).join(' '):"'none'"),"script-src-attr 'none'",isDoi?"style-src 'self'":"style-src 'self' 'unsafe-inline'","img-src 'self' data:","font-src 'none'",isDoi?'connect-src https://api.crossref.org':social?'connect-src https://www.googleapis.com https://api.apify.com':"connect-src 'none'","object-src 'none'","base-uri 'none'","form-action 'none'",isHome?'frame-src '+[...html.matchAll(/data-demo-url="([^"]+)"/g)].map(m=>m[1]).join(' '):"frame-src 'none'",file.includes('/data2analysis/')?"worker-src 'self'":"worker-src 'none'","manifest-src 'none'"].join('; ');
   html=html.replace(/(<meta charset="[^"]+">)/i,`$1\n<meta http-equiv="Content-Security-Policy" content="${csp}">\n<meta name="referrer" content="no-referrer">`);
   if(/\son[a-z]+="/i.test(html))throw new Error('Inline event handler remains in '+file);
   writeFileSync(file,html);
