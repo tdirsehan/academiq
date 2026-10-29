@@ -90,3 +90,7 @@ After changing scripts or styles, run `npm run security:refresh` and `npm test` 
 ## Visual identity and catalogue
 
 The catalogue uses the AcademIQ navy/blue logo at `assets/academiq-logo.png`, with shared header display styles in `assets/brand.css`. The original transparent artwork is reused without raster edits. The homepage includes stage filters, a local text search, mobile navigation, and direct/embedded access to all eight tools. Search terms remain in the browser. Data2Analysis, Title2DOI and the information pages share the updated logo. Separately hosted module repositories retain their own interfaces.
+
+## Interface language
+
+The module interfaces use English, including Title2DOI messages and both Social Analyzer routes. Search results, author names, supplied research text and user comments retain their original language. Multilingual matching and analysis dictionaries are preserved. Language checks run with `npm test`.
